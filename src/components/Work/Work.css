@@ -1,0 +1,77 @@
+.filter .filter-tag#tag-0:checked~.filter-nav .chip[for="tag-0"],
+.filter .filter-tag#tag-1:checked~.filter-nav .chip[for="tag-1"],
+.filter .filter-tag#tag-2:checked~.filter-nav .chip[for="tag-2"],
+.filter .filter-tag#tag-3:checked~.filter-nav .chip[for="tag-3"],
+.filter .filter-tag#tag-4:checked~.filter-nav .chip[for="tag-4"],
+.filter .filter-tag#tag-5:checked~.filter-nav .chip[for="tag-5"],
+.filter .filter-tag#tag-6:checked~.filter-nav .chip[for="tag-6"] {
+    background: white;
+    color: #db4949;
+    font-weight: 800;
+}
+
+.filter .filter-tag#tag-1:checked~.filter-body .filter-item:not([data-tag~="tag-1"]),
+.filter .filter-tag#tag-2:checked~.filter-body .filter-item:not([data-tag~="tag-2"]),
+.filter .filter-tag#tag-3:checked~.filter-body .filter-item:not([data-tag~="tag-3"]),
+.filter .filter-tag#tag-4:checked~.filter-body .filter-item:not([data-tag~="tag-4"]),
+.filter .filter-tag#tag-5:checked~.filter-body .filter-item:not([data-tag~="tag-5"]),
+.filter .filter-tag#tag-6:checked~.filter-body .filter-item:not([data-tag~="tag-6"]) {
+    display: none;
+}
+
+.filter .filter-nav {
+    margin: 1rem 0;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.filter-nav label.chip {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.filter .filter-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.filter {
+    width: 100%;
+}
+
+.filter-item.card {
+    display: flex;
+    width: 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.Hold-work {
+    width: 100%;
+    position: relative;
+    padding-left: 10px;
+    font-size: 2.5vw !important;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    background: #db4948db;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    line-height: 1;
+    text-transform: uppercase
+}
+
+.filter-item.card:hover .Hold-work {
+    opacity: 1;
+}

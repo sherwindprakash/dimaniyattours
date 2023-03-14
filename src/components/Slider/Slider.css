@@ -1,0 +1,45 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-slide {
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+video.HomeVideo,
+.swiper-slide img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.Arrow-Holder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Arrow-Holder a {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    video.HomeVideo,
+    .swiper-slide img {
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+    }
+}
