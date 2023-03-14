@@ -1,5 +1,5 @@
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
-import "./Navbar.css";
+import "./Head.css";
 import Logo from "../assets/zeenah_tm.svg";
 import LogoW from "../assets/zeenah_tm_white.svg";
 
