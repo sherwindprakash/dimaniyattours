@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    document.title = `Zeenah | Integrated Marketing Agency Oman | web design agency Oman`;
+    document.title = `Title Here`;
   });
 
   return (
