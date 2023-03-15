@@ -62,6 +62,17 @@ img {
   height: auto;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+}
+
+div#root {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 /* LOADING */
 
 .loading {
@@ -117,4 +128,9 @@ img {
 @media only screen and (max-width: 1080px) {}
 
 
-@media only screen and (max-width: 700px) {}
+@media only screen and (max-width: 700px) {
+  div#root {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

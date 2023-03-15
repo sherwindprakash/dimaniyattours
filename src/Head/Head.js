@@ -1,11 +1,32 @@
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import "./Head.css";
-import Logo from "../assets/zeenah_tm.svg";
-import LogoW from "../assets/zeenah_tm_white.svg";
 
 export default function Navbar() {
   const { pathname } = useLocation();
-  return <h1>HEAD</h1>;
+  return (
+    <header>
+      <div className="HeadLeft"></div>
+      <div className="HeadRight">
+        <ul className="HomeMenu">
+          <CustomLink title="Home" to="/en/">
+            Home
+          </CustomLink>
+          <CustomLink title="Package" to="/en/package/">
+            Package
+          </CustomLink>
+          <CustomLink title="Destination" to="/en/destination/">
+            Destination
+          </CustomLink>
+          <CustomLink title="Gallery" to="/en/gallery/">
+            Gallery
+          </CustomLink>
+          <CustomLink title="Contact" to="/en/contact/">
+            Contact
+          </CustomLink>
+        </ul>
+      </div>
+    </header>
+  );
 }
 
 function CustomLink({ to, children, ...props }) {

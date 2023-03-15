@@ -1,9 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "./Footer.css";
-import Logo from "../assets/zeenah_tm.svg";
-import LogoW from "../assets/zeenah_tm_white.svg";
-
-import Logo_4C from "../assets/4C.svg";
 
 export default function Navbar() {
   return (

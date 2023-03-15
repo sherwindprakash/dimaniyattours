@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul.HomeMenu {
+    list-style: none;
+    display: flex;
+}
+
+ul.HomeMenu li a {
+    text-decoration: none;
+    padding-left: 20px;
+}
