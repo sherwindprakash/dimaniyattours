@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import "./Destination.css";
-// import Slider from "../components/Slider/Slider";
 
 export default function Destination() {
   useEffect(() => {
-    document.title = `Destination`;
+    document.title = `Dimaniyat Tours | Destination`;
   });
 
   return (

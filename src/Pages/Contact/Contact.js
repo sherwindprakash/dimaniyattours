@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import "./Contact.css";
-// import Slider from "../components/Slider/Slider";
 
 export default function Contact() {
   useEffect(() => {
-    document.title = `Contact`;
+    document.title = `Dimaniyat Tours | Contact`;
   });
 
   return (

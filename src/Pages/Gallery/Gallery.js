@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import "./Gallery.css";
-// import Slider from "../components/Slider/Slider";
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = `Gallery`;
+    document.title = `Dimaniyat Tours | Gallery`;
   });
 
   return (

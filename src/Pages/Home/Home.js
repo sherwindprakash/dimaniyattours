@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import "./Home.css";
-// import Slider from "../components/Slider/Slider";
+import Home_Slider from "../../components/Home_Slider/Home_Slider";
 
 export default function Home() {
   useEffect(() => {
-    document.title = `Home`;
+    document.title = `Dimaniyat Tours`;
   });
 
   return (
     <>
       <div className="Home">
-        <h1>Home</h1>
+        <Home_Slider />
       </div>
     </>
   );
