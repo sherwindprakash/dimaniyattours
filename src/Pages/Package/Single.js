@@ -384,6 +384,7 @@ function PackageSingle() {
                   );
                 })}
             </div>
+            {value3}
           </div>
         </div>
         {/* Details */}
