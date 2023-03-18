@@ -17,6 +17,15 @@ function PackageSingle() {
   //     console.log(event.target.value);
   //   }
 
+  const [value3, setValue3] = React.useState(false);
+
+  const handleChange3 = (e) => {
+    //setValue3(!value3);
+    setValue3(e.target.value);
+    console.log("Vlue3",value3);
+
+  };
+
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
 
@@ -176,14 +185,14 @@ function PackageSingle() {
                         fetchpriority="low"
                         height="40"
                         width="40"
-                        alt="Time Icon"
-                        title="Time Icon"
+                        alt="Comment Icon"
+                        title="Comment Icon"
                         src={COMMNT}
                       />
                     </picture>
                     <figcaption>Give your comment</figcaption>
                   </a>
-
+                  {/* POP */}
                   <div className="modal" id="comment">
                     <a
                       className="modal-overlay"
@@ -211,24 +220,63 @@ function PackageSingle() {
                       </div>
                     </div>
                   </div>
+                  {/*  */}
                 </div>
                 <div className="QLinkInsideDivs">
-                  <picture>
-                    <source
-                      srcSet={EMAILW}
-                      media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                      className="timeImage"
-                      fetchpriority="low"
-                      height="40"
-                      width="40"
-                      alt="Time Icon"
-                      title="Time Icon"
-                      src={EMAIL}
-                    />
-                  </picture>
-                  <figcaption>Inquary</figcaption>
+                  <a
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-end",
+                    }}
+                    title="Inquary"
+                    href="#Inquary"
+                  >
+                    <picture>
+                      <source
+                        srcSet={EMAILW}
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        className="timeImage"
+                        fetchpriority="low"
+                        height="40"
+                        width="40"
+                        alt="Email Icon"
+                        title="Email Icon"
+                        src={EMAIL}
+                      />
+                    </picture>
+                    <figcaption>Inquary</figcaption>
+                  </a>
+                  {/* POP */}
+                  <div className="modal" id="Inquary">
+                    <a
+                      className="modal-overlay"
+                      href="#close"
+                      aria-label="Close"
+                    ></a>
+                    <div className="modal-container" role="document">
+                      <div className="modal-header">
+                        <a
+                          className="btn btn-clear float-right"
+                          href="#close"
+                          aria-label="Close"
+                        ></a>
+                        <div className="modal-title">Modal title</div>
+                      </div>
+                      <div className="modal-body">
+                        <div className="content">
+                          <p>This is the content inside the modal.</p>
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <a className="btn btn-link" href="#close">
+                          Close
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  {/*  */}
                 </div>
               </div>
             </div>
@@ -275,7 +323,7 @@ function PackageSingle() {
           </div>
           {/* Totals */}
           <div className="TotalHolder">
-            Total {value * post.price_adults + value2 * post.price_kids} OMR
+            Total {value * post.price_adults + value2 * post.price_kids }  OMR
           </div>
           {/* Travel add-ons and extras */}
           <div
@@ -283,25 +331,48 @@ function PackageSingle() {
               width: "100%",
             }}
           >
-            <div className="Details">Travel add-ons and extras</div>
+            <div className="Details">
+              Travel add-ons and extras{" "}
+              <small
+                style={{
+                  fontSize: "14px",
+                }}
+              >
+                (Optional)
+              </small>
+            </div>
             <div className="availability">
               {post.additional &&
                 post.additional.map((item, index) => {
                   return (
                     <>
-                      <div key={index}>
-                        <img
-                          className="travelImage"
-                          fetchpriority="low"
-                          height="300"
-                          width="300"
-                          alt={item.value.name}
-                          title={item.value.name}
-                          src={
-                            `http://localhost/admin/storage/uploads/` +
-                            item.value.image.path
-                          }
-                        />
+                      <div className="HHH" key={index}>
+                        <div
+                          style={{
+                            position: "relative",
+                          }}
+                        >
+                          <label>
+                            <input
+                              type="radio"
+                              checked={value3}
+                              value={item.value.price}
+                              onChange={handleChange3}
+                            />
+                            <img
+                              className="travelImage"
+                              fetchpriority="low"
+                              height="300"
+                              width="300"
+                              alt={item.value.name}
+                              title={item.value.name}
+                              src={
+                                `http://localhost/admin/storage/uploads/` +
+                                item.value.image.path
+                              }
+                            />
+                          </label>
+                        </div>
                         <p>{item.value.name}</p>
                       </div>
                     </>

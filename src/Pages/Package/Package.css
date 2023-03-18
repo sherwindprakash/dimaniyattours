@@ -103,7 +103,7 @@ small.SmallNote {
     align-items: flex-start;
     justify-content: flex-start;
 }
-.availability div {
+.availability .HHH {
     width: 23%;
     font-weight: 400;
     text-align: center;
@@ -156,7 +156,7 @@ img.timeImage {
 }
 
 @media only screen and (max-width: 1180px) {
-    .availability div {
+    .availability .HHH {
         width: 31%;
         margin: 1%;
     }
@@ -167,7 +167,14 @@ img.timeImage {
         width: 49%;
         margin-bottom: 1%;
     }
-   
+    .QuickLinks {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -192,7 +199,7 @@ img.timeImage {
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .availability div {
+    .availability .HHH {
         width: 48%;
         margin: 1%;
     }
@@ -289,4 +296,21 @@ img.timeImage {
     text-align: right;
 }
 
-
+/* Radio */
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 2px solid #f00;
+  }
