@@ -12,7 +12,11 @@ import COMMNTW from "../../assets/comment-material-2-svgrepo-com-White.svg";
 import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
 
+
 function PackageSingle() {
+
+  
+  
   //   function handleChange(event) {
   //     console.log(event.target.value);
   //   }
@@ -20,11 +24,12 @@ function PackageSingle() {
   const [value3, setValue3] = React.useState(false);
 
   const handleChange3 = (e) => {
-    //setValue3(!value3);
+    setValue3(!value3);
     setValue3(e.target.value);
-    console.log("Vlue3",value3);
+    console.log("Value 3", e.target.value);
 
   };
+
 
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
@@ -323,7 +328,7 @@ function PackageSingle() {
           </div>
           {/* Totals */}
           <div className="TotalHolder">
-            Total {value * post.price_adults + value2 * post.price_kids }  OMR
+            Total {value * post.price_adults + value2 * post.price_kids} OMR
           </div>
           {/* Travel add-ons and extras */}
           <div
@@ -355,7 +360,7 @@ function PackageSingle() {
                           <label>
                             <input
                               type="radio"
-                              checked={value3}
+                              //checked={value3}
                               value={item.value.price}
                               onChange={handleChange3}
                             />
@@ -388,12 +393,12 @@ function PackageSingle() {
           }}
         >
           <div className="Details">Trip Provide</div>
-          <div className="availability">
+          <div className="availabilityDetils">
             {post.availability &&
               post.availability.map((item, index) => {
                 return (
                   <>
-                    <div key={index}>
+                    <div className="HHH" key={index}>
                       <img
                         className="availabilityImage"
                         fetchpriority="low"
