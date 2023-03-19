@@ -12,25 +12,15 @@ import COMMNTW from "../../assets/comment-material-2-svgrepo-com-White.svg";
 import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
 
+import TravelAddons from "../../components/Travel_addons/"
 
 function PackageSingle() {
-
-  
-  
-  //   function handleChange(event) {
-  //     console.log(event.target.value);
-  //   }
-
-  const [value3, setValue3] = React.useState(false);
-
-  const handleChange3 = (e) => {
-    setValue3(!value3);
-    setValue3(e.target.value);
-    console.log("Value 3", e.target.value);
-
-  };
-
-
+ 
+// GET DATA
+const getData = (data) => {
+  console.log(data)
+}
+// 
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
 
@@ -65,12 +55,18 @@ function PackageSingle() {
         });
     };
     fetchData();
-  }, []);
+  }, [params.slug]);
 
   if (!post) return null;
 
+
+
   return (
     <>
+
+
+
+
       <div className="PakageSingleBlock">
         <div className="LeftHolder">
           <img
@@ -352,39 +348,13 @@ function PackageSingle() {
                   return (
                     <>
                       <div className="HHH" key={index}>
-                        <div
-                          style={{
-                            position: "relative",
-                          }}
-                        >
-                          <label>
-                            <input
-                              type="radio"
-                              //checked={value3}
-                              value={item.value.price}
-                              onChange={handleChange3}
-                            />
-                            <img
-                              className="travelImage"
-                              fetchpriority="low"
-                              height="300"
-                              width="300"
-                              alt={item.value.name}
-                              title={item.value.name}
-                              src={
-                                `http://localhost/admin/storage/uploads/` +
-                                item.value.image.path
-                              }
-                            />
-                          </label>
-                        </div>
-                        <p>{item.value.name}</p>
+                      <TravelAddons onChange={getData}  Price={item.value.price} Name={item.value.name} Image={item.value.image.path}/>
+                        <p>{item.value.name}</p> 
                       </div>
                     </>
                   );
                 })}
             </div>
-            {value3}
           </div>
         </div>
         {/* Details */}
@@ -424,3 +394,6 @@ function PackageSingle() {
   );
 }
 export default PackageSingle;
+
+
+
