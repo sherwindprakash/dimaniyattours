@@ -10,6 +10,7 @@ export default function Gallery() {
     <>
       <div className="Gallery">
         <h1>Gallery</h1>
+        https://www.lightgalleryjs.com/docs/react/
       </div>
     </>
   );
