@@ -1,9 +1,13 @@
+.Destination {
+    max-width: 1280px;
+}
+
 .BodyDestination {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .ImagHolder {

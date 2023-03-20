@@ -15,7 +15,7 @@ export default function Destination() {
         <a
           style={{
             marginBottom: "10px",
-            display: "block",
+            display: "inline-block",
           }}
           href="https://en.wikipedia.org/wiki/Ad_Dimaniyat_Islands"
           target="_blank"
