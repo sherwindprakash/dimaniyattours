@@ -26,7 +26,7 @@ function PackageSingle() {
     setValue2(e.target.value);
   };
 
-  const [value3, setValue3] = useState("Sharing");
+  const [value3, setValue3] = useState(0);
 
   const handleChange3 = (e) => {
     setValue3(e.target.value);
