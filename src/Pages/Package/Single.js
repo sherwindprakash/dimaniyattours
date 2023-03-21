@@ -324,29 +324,37 @@ function PackageSingle() {
             </small>
           </div>
 
-          <div className="GroupRadio">
-            <h4>Type :</h4>
-            <input
-              type="radio"
-              id="Sharing"
-              name="type"
-              value="Sharing"
-              onChange={handleChange3}
-              //checked
-              required
-            />
-            <label htmlFor="no">Sharing</label>
-            <input
-              type="radio"
-              id="Private"
-              name="type"
-              value="Private"
-              onChange={handleChange3}
-              required
-            />
-            <label htmlFor="Private">Private</label>
-          </div>
+          <div className="ExtraCalucul">
+            <div className="GroupRadio">
+              <h4>Type :</h4>
+              <input
+                type="radio"
+                id="Sharing"
+                name="type"
+                value="Sharing"
+                onChange={handleChange3}
+                //checked
+                required
+              />
+              <label htmlFor="no">Sharing</label>
+              <input
+                type="radio"
+                id="Private"
+                name="type"
+                value="Private"
+                onChange={handleChange3}
+                required
+              />
+              <label htmlFor="Private">Private</label>
+            </div>
 
+            <div className="GroupRadio">
+              <label htmlFor="no">
+                <h4>Date :</h4>
+              </label>
+              <input type="date" id="Sharing" name="type" required />
+            </div>
+          </div>
           {/*  */}
 
           {/* Totals */}
