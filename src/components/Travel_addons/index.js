@@ -15,7 +15,6 @@ function RadioButton({ Price, Name, Image, Index, chooseMessage }) {
   };
 
   // SEND DATA
-  console.log(Price.reduce((a, v) => (a = a + Number(v.Price)), 0));
   //
 
   return (

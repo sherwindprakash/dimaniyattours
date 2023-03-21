@@ -26,7 +26,7 @@ function PackageSingle() {
     setValue2(e.target.value);
   };
 
-  const [value3, setValue3] = React.useState(false);
+  const [value3, setValue3] = useState("Sharing");
 
   const handleChange3 = (e) => {
     setValue3(e.target.value);
@@ -57,11 +57,11 @@ function PackageSingle() {
     fetchData();
   }, [params.slug]);
 
-  if (!post) return null;
-
   // GET DATA
 
   //
+
+  if (!post) return null;
 
   return (
     <>
@@ -332,6 +332,8 @@ function PackageSingle() {
               name="type"
               value="Sharing"
               onChange={handleChange3}
+              //checked
+              required
             />
             <label htmlFor="no">Sharing</label>
             <input
@@ -340,6 +342,7 @@ function PackageSingle() {
               name="type"
               value="Private"
               onChange={handleChange3}
+              required
             />
             <label htmlFor="Private">Private</label>
           </div>
