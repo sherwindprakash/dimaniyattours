@@ -12,15 +12,9 @@ import COMMNTW from "../../assets/comment-material-2-svgrepo-com-White.svg";
 import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
 
-import TravelAddons from "../../components/Travel_addons/"
+import TravelAddons from "../../components/Travel_addons/";
 
 function PackageSingle() {
- 
-// GET DATA
-const getData = (data) => {
-  console.log(data)
-}
-// 
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
 
@@ -32,6 +26,12 @@ const getData = (data) => {
     setValue2(e.target.value);
   };
 
+  const [value3, setValue3] = React.useState(false);
+
+  const handleChange3 = (e) => {
+    setValue3(e.target.value);
+  };
+
   let params = useParams();
 
   const [post, setPost] = React.useState();
@@ -39,7 +39,7 @@ const getData = (data) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost/admin/api/collections/get/package?token=22f8709abba293936facc262597237&filter[title_slug]=" +
+        "http://localhost/dimaniyattours_api/admin/admin/api/collections/get/package?token=22f8709abba293936facc262597237&filter[title_slug]=" +
           params.slug,
         {
           method: "get",
@@ -59,14 +59,12 @@ const getData = (data) => {
 
   if (!post) return null;
 
+  // GET DATA
 
+  //
 
   return (
     <>
-
-
-
-
       <div className="PakageSingleBlock">
         <div className="LeftHolder">
           <img
@@ -76,7 +74,10 @@ const getData = (data) => {
             width="480"
             alt={post.title}
             title={post.title}
-            src={`http://localhost/admin/storage/uploads/` + post.image.path}
+            src={
+              `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+              post.image.path
+            }
             style={{
               marginBottom: "30px",
             }}
@@ -92,7 +93,6 @@ const getData = (data) => {
           >
             {post.content}
           </div>
-
           {/* Timing */}
           <div>
             <div
@@ -283,6 +283,7 @@ const getData = (data) => {
             </div>
           </div>
           {/* Get Value */}
+
           <div className="GenValue">
             <div className="SingleH">
               <div>
@@ -322,40 +323,73 @@ const getData = (data) => {
               * Please input your person count
             </small>
           </div>
+
+          <div className="GroupRadio">
+            <h4>Type :</h4>
+            <input
+              type="radio"
+              id="Sharing"
+              name="type"
+              value="Sharing"
+              onChange={handleChange3}
+            />
+            <label htmlFor="no">Sharing</label>
+            <input
+              type="radio"
+              id="Private"
+              name="type"
+              value="Private"
+              onChange={handleChange3}
+            />
+            <label htmlFor="Private">Private</label>
+          </div>
+
+          {/*  */}
+
           {/* Totals */}
           <div className="TotalHolder">
             Total {value * post.price_adults + value2 * post.price_kids} OMR
           </div>
           {/* Travel add-ons and extras */}
-          <div
-            style={{
-              width: "100%",
-            }}
-          >
-            <div className="Details">
-              Travel add-ons and extras{" "}
-              <small
-                style={{
-                  fontSize: "14px",
-                }}
-              >
-                (Optional)
-              </small>
+
+          {value3 === "Private" ? (
+            <div
+              style={{
+                width: "100%",
+              }}
+            >
+              <div className="Details">
+                Travel add-ons and extras{" "}
+                <small
+                  style={{
+                    fontSize: "14px",
+                  }}
+                >
+                  (Optional)
+                </small>
+              </div>
+              <div className="availability">
+                {post.additional &&
+                  post.additional.map((item, index) => {
+                    return (
+                      <>
+                        <div className="HHH" key={index + `_HHH`}>
+                          <TravelAddons
+                            Price={item.value.price}
+                            Name={item.value.name}
+                            Image={item.value.image.path}
+                            Index={index}
+                          />
+                          <p>{item.value.name}</p>
+                        </div>
+                      </>
+                    );
+                  })}
+              </div>
             </div>
-            <div className="availability">
-              {post.additional &&
-                post.additional.map((item, index) => {
-                  return (
-                    <>
-                      <div className="HHH" key={index}>
-                      <TravelAddons onChange={getData}  Price={item.value.price} Name={item.value.name} Image={item.value.image.path}/>
-                        <p>{item.value.name}</p> 
-                      </div>
-                    </>
-                  );
-                })}
-            </div>
-          </div>
+          ) : (
+            <div></div>
+          )}
         </div>
         {/* Details */}
         <div
@@ -378,7 +412,7 @@ const getData = (data) => {
                         alt={item.value.name}
                         title={item.value.name}
                         src={
-                          `http://localhost/admin/storage/uploads/` +
+                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
                           item.value.image.path
                         }
                       />
@@ -394,6 +428,3 @@ const getData = (data) => {
   );
 }
 export default PackageSingle;
-
-
-

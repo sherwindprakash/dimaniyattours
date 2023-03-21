@@ -5,15 +5,18 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+
 .PackSingle {
     width: 32%;
     margin-bottom: 1%;
 }
+
 .PackageHolder {
     position: relative;
     overflow: hidden;
     transition: all .2s ease-in-out;
 }
+
 .PackageHolder:hover {
     transform: scale(1.1);
     z-index: 1;
@@ -30,6 +33,7 @@
     padding-left: 20px;
     width: 100%;
 }
+
 .PakageSingleBlock {
     display: flex;
     flex-wrap: wrap;
@@ -37,20 +41,24 @@
     align-items: flex-start;
     width: 100%;
 }
+
 .LeftHolder {
     width: 40%;
 }
+
 .BodyHolder {
     margin-left: 4%;
     width: 56%;
     max-width: 700px;
 }
+
 .GenValue {
     display: flex;
     font-size: 20px;
     flex-direction: column;
     font-weight: 500;
 }
+
 .GenValue .SingleH {
     border-bottom: 1px solid var(--bg-color-light);
     padding-bottom: 5px;
@@ -59,18 +67,21 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .SingleH label {
     display: inline;
     font-size: 15px;
     font-weight: 400;
     margin-right: 10px;
 }
+
 .SingleH div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
 }
+
 input.InputDesign {
     display: inline;
     width: 100px;
@@ -83,12 +94,14 @@ input.InputDesign {
     font-weight: 700;
     font-family: 'Noto Sans', sans-serif;
 }
+
 .TotalHolder {
     text-align: right;
     margin-top: 20px;
     font-weight: bold;
     font-size: 25px;
 }
+
 small.SmallNote {
     font-size: 12px;
     text-align: right;
@@ -96,6 +109,7 @@ small.SmallNote {
     opacity: 0.7;
     margin-top: 5px;
 }
+
 .availability {
     display: flex;
     flex-direction: row;
@@ -103,6 +117,7 @@ small.SmallNote {
     align-items: flex-start;
     justify-content: flex-start;
 }
+
 .availability .HHH {
     width: 23%;
     font-weight: 400;
@@ -110,12 +125,14 @@ small.SmallNote {
     font-size: 13px;
     margin: 1%;
 }
+
 img.availabilityImage {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     padding: 10px;
 }
+
 img.travelImage {
     width: 100%;
     height: auto;
@@ -129,11 +146,13 @@ img.travelImage {
     border-top: 1px solid var(--bg-color-light);
     padding-top: 20px;
 }
+
 .timing {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--bg-color-light);
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
+
 img.timeImage {
     width: 40px;
     height: 40px;
@@ -141,6 +160,7 @@ img.timeImage {
     top: 12px;
     padding: 5px;
 }
+
 .QuickLinks {
     display: flex;
     justify-content: flex-start;
@@ -149,17 +169,20 @@ img.timeImage {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .QLinkInsideDivs {
     display: flex;
     align-items: flex-end;
     margin-right: 15px;
 }
+
 .availabilityDetils {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .availabilityDetils .HHH {
     text-align: center;
     width: min-content;
@@ -178,6 +201,7 @@ img.timeImage {
         width: 49%;
         margin-bottom: 1%;
     }
+
     .QuickLinks {
         display: flex;
         justify-content: flex-start;
@@ -193,9 +217,11 @@ img.timeImage {
         width: 99%;
         margin-bottom: 1%;
     }
+
     .LeftHolder {
         width: 100%;
     }
+
     .BodyHolder {
         margin-left: 0%;
         width: 100%;
@@ -210,6 +236,7 @@ img.timeImage {
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     .availability .HHH {
         width: 48%;
         margin: 1%;
@@ -242,6 +269,7 @@ img.timeImage {
     right: 0;
     top: 0;
 }
+
 .modal.active,
 .modal:target {
     display: -ms-flexbox;
@@ -249,6 +277,7 @@ img.timeImage {
     opacity: 1;
     z-index: 400;
 }
+
 .modal.active .modal-overlay,
 .modal:target .modal-overlay {
     background: rgba(247, 248, 249, 0.75);
@@ -260,22 +289,27 @@ img.timeImage {
     right: 0;
     top: 0;
 }
+
 .modal.active .modal-container,
 .modal:target .modal-container {
     animation: slide-down 0.2s ease 1;
     z-index: 1;
 }
+
 .modal.modal-sm .modal-container {
     max-width: 320px;
     padding: 0 0.4rem;
 }
+
 .modal.modal-lg .modal-overlay {
     background: #fff;
 }
+
 .modal.modal-lg .modal-container {
     box-shadow: none;
     max-width: 960px;
 }
+
 .modal-container {
     background: var(--bg-color-light);
     border-radius: 0.1rem;
@@ -289,19 +323,23 @@ img.timeImage {
     padding: 0 0.8rem;
     width: 100%;
 }
+
 .modal-container.modal-fullheight {
     max-height: 100vh;
 }
+
 .modal-container .modal-header {
     padding: 0.8rem;
     font-size: 24px;
     font-weight: 400;
 }
+
 .modal-container .modal-body {
     overflow-y: auto;
     padding: 0.8rem;
     position: relative;
 }
+
 .modal-container .modal-footer {
     padding: 0.8rem;
     text-align: right;
@@ -309,16 +347,35 @@ img.timeImage {
 
 
 
-input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    transform: scale(2);
+    padding: 10px;
     position: absolute;
     left: 10px;
     top: 10px;
+}
+
+
+/* SWITCH */
+.GroupRadio {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 23px;
+    text-align: right;
+    margin-top: 25px;
+}
+
+.GroupRadio h4 {
+    display: inline;
+    font-size: 30px;
+    margin-right: 20px;
 }
