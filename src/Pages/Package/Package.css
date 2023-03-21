@@ -97,7 +97,7 @@ input.InputDesign {
 
 .TotalHolder {
     text-align: right;
-    margin-top: 20px;
+    margin-top: 30px;
     font-weight: bold;
     font-size: 25px;
 }
@@ -367,7 +367,7 @@ input[type=checkbox] {
 
 /* SWITCH */
 .GroupRadio {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     text-align: right;
     display: flex;
@@ -388,4 +388,11 @@ input[type=checkbox] {
     flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+input#Sharing {
+    font-family: 'Noto Sans', sans-serif;
+}
+.GroupRadio label {
+    padding-left: 5px;
 }

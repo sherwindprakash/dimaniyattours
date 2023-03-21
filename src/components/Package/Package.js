@@ -24,7 +24,7 @@ function PackageSingle({ ID }) {
         });
     };
     fetchData();
-  }, []);
+  }, [ID]);
 
   if (!post) return null;
 
