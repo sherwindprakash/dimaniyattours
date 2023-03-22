@@ -12,8 +12,6 @@ import COMMNTW from "../../assets/comment-material-2-svgrepo-com-White.svg";
 import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
 
-import TravelAddons from "../../components/Travel_addons/";
-
 function PackageSingle() {
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
@@ -87,13 +85,6 @@ function PackageSingle() {
   }, [params.slug]);
 
   if (!post) return null;
-
-  // GET DATA
-  const total_shop = post.additional.reduce(
-    (prevValue, currentValue) => prevValue + Number(currentValue.value.price),
-    0
-  );
-  //
 
   return (
     <>
@@ -359,25 +350,30 @@ function PackageSingle() {
           <div className="ExtraCalucul">
             <div className="GroupRadio">
               <h4>Type :</h4>
-              <input
-                type="radio"
-                id="Sharing"
-                name="type"
-                value="Sharing"
-                onChange={handleChange3}
-                //checked
-                required
-              />
-              <label htmlFor="no">Sharing</label>
-              <input
-                type="radio"
-                id="Private"
-                name="type"
-                value="Private"
-                onChange={handleChange3}
-                required
-              />
-              <label htmlFor="Private">Private</label>
+              <div className="Group">
+                <input
+                  type="radio"
+                  id="Sharing"
+                  name="type"
+                  value="Sharing"
+                  onChange={handleChange3}
+                  //checked
+                  required
+                />
+                <label htmlFor="no">Sharing</label>
+              </div>
+              <div className="Group">
+                <input
+                  type="radio"
+                  id="Private"
+                  name="type"
+                  value="Private"
+                  onChange={handleChange3}
+                  required
+                />
+                <label htmlFor="Private">Private</label>
+              </div>
+
               <small
                 style={{
                   marginLeft: "5px",
@@ -388,9 +384,7 @@ function PackageSingle() {
             </div>
 
             <div className="GroupRadio">
-              <label htmlFor="no">
-                <h4>Date :</h4>
-              </label>
+              <h4>Date :</h4>
               <input type="date" id="Sharing" name="type" required />
             </div>
           </div>
@@ -398,10 +392,13 @@ function PackageSingle() {
 
           {/* Totals */}
           <div className="TotalHolder">
-            Total {value * post.price_adults + value2 * post.price_kids} OMR
+            Total{" "}
+            {value * post.price_adults +
+              value2 * post.price_kids +
+              Number(checkedItems)}{" "}
+            OMR
           </div>
           {/* Travel add-ons and extras */}
-
           {value3 === "Private" ? (
             <div
               style={{
@@ -419,50 +416,44 @@ function PackageSingle() {
                 </small>
               </div>
               <div className="availability">
-                {post.additional &&
-                  post.additional.map((item, index) => {
-                    return (
-                      <>
-                        <div className="HHH" key={index + `_HHH`}>
-                          <TravelAddons
-                            Price={item.value.price}
-                            Name={item.value.name}
-                            Image={item.value.image.path}
-                            Index={index}
-                          />
-                          <p>{item.value.name}</p>
-                        </div>
-                      </>
-                    );
-                  })}
+                {post.additional.map((item, index) => (
+                  <div key={index} className="GroupRadio Check">
+                    <label
+                      key={index + `_Radio`}
+                      style={{
+                        width: "100%",
+                      }}
+                    >
+                      <input
+                        value={item.value.price}
+                        type="checkbox"
+                        onChange={handleCheck}
+                        className="CheckBox"
+                      />
+                      <img
+                        className="travelImage"
+                        fetchpriority="low"
+                        height="300"
+                        width="300"
+                        alt={item.value.name}
+                        title={item.value.name}
+                        src={
+                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+                          item.value.image.path
+                        }
+                      />
+                    </label>
+
+                    <span className={isChecked(item)}>{item.value.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ) : (
             <div></div>
           )}
         </div>
-        {/*  */}
-        <div className="app">
-          <div className="checkList">
-            <div className="list-container">
-              {post.additional.map((item, index) => (
-                <div key={index}>
-                  <input
-                    style={{
-                      position: "relative",
-                    }}
-                    value={item.value.price}
-                    type="checkbox"
-                    onChange={handleCheck}
-                  />
-                  <span className={isChecked(item)}>{item.value.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          <div>{`Items checked are: ${checkedItems}`}</div>
-        </div>
         {/* Details */}
         <div
           style={{
