@@ -56,8 +56,9 @@ function PackageSingle() {
   // Return classes based on whether item is checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
-
   //
+
+  const names = ["James", "John", "Paul", "Ringo", "George"];
 
   let params = useParams();
 
@@ -461,6 +462,44 @@ function PackageSingle() {
           }}
         >
           <div className="Details">Trip Provide</div>
+          <div className="availabilityDetils">
+            {post.availability &&
+              post.availability.map((item, index) => {
+                return (
+                  <>
+                    <div className="HHH" key={index}>
+                      <img
+                        className="availabilityImage"
+                        fetchpriority="low"
+                        height="300"
+                        width="300"
+                        alt={item.value.name}
+                        title={item.value.name}
+                        src={
+                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+                          item.value.image.path
+                        }
+                      />
+                      <p>{item.value.name}</p>
+                    </div>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+        {/* Details */}
+        <div
+          style={{
+            width: "100%",
+          }}
+        >
+          <div className="Details">Menu</div>
+
+          {names
+            .filter((name) => name.includes("J"))
+            .map((filteredName) => (
+              <li>{filteredName}</li>
+            ))}
           <div className="availabilityDetils">
             {post.availability &&
               post.availability.map((item, index) => {
