@@ -32,6 +32,35 @@ function PackageSingle() {
     setValue3(e.target.value);
   };
 
+  //
+  // State with list of all checked item
+  const [checked, setChecked] = useState([]);
+  // const checkList = ["10", "40", "60", "25"];
+
+  // Add/Remove checked item from list
+  const handleCheck = (event) => {
+    var updatedList = [...checked];
+    if (event.target.checked) {
+      updatedList = [...checked, event.target.value];
+    } else {
+      updatedList.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(updatedList);
+  };
+
+  // Generate string of checked items
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return Number(total) + Number(item);
+      })
+    : "";
+
+  // Return classes based on whether item is checked
+  var isChecked = (item) =>
+    checked.includes(item) ? "checked-item" : "not-checked-item";
+
+  //
+
   let params = useParams();
 
   const [post, setPost] = React.useState();
@@ -57,11 +86,14 @@ function PackageSingle() {
     fetchData();
   }, [params.slug]);
 
-  // GET DATA
-
-  //
-
   if (!post) return null;
+
+  // GET DATA
+  const total_shop = post.additional.reduce(
+    (prevValue, currentValue) => prevValue + Number(currentValue.value.price),
+    0
+  );
+  //
 
   return (
     <>
@@ -408,6 +440,28 @@ function PackageSingle() {
           ) : (
             <div></div>
           )}
+        </div>
+        {/*  */}
+        <div className="app">
+          <div className="checkList">
+            <div className="list-container">
+              {post.additional.map((item, index) => (
+                <div key={index}>
+                  <input
+                    style={{
+                      position: "relative",
+                    }}
+                    value={item.value.price}
+                    type="checkbox"
+                    onChange={handleCheck}
+                  />
+                  <span className={isChecked(item)}>{item.value.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>{`Items checked are: ${checkedItems}`}</div>
         </div>
         {/* Details */}
         <div

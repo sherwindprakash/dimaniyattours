@@ -15,6 +15,7 @@ function RadioButton({ Price, Name, Image, Index }) {
   };
 
   // SEND DATA
+
   //
 
   return (
