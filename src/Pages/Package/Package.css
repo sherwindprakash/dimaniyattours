@@ -432,7 +432,7 @@ span.not-checked-item {
 
 @media only screen and (max-width: 900px) {
     .GroupRadio.Check {
-        width: 48%;
+        width: 50%;
     }
 
 }
@@ -440,6 +440,6 @@ span.not-checked-item {
 
 @media only screen and (max-width: 400px) {
     .GroupRadio.Check {
-        width: 98%;
+        width: 100%;
     }
 }
