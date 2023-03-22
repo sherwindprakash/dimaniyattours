@@ -346,6 +346,13 @@ function PackageSingle() {
                 required
               />
               <label htmlFor="Private">Private</label>
+              <small
+                style={{
+                  marginLeft: "5px",
+                }}
+              >
+                (Travel add-ons)
+              </small>
             </div>
 
             <div className="GroupRadio">
