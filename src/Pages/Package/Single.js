@@ -350,7 +350,7 @@ function PackageSingle() {
 
           <div className="ExtraCalucul">
             <div className="GroupRadio">
-              <h4>Type :</h4>
+              <div className="title">Type :</div>
               <div className="Group">
                 <input
                   type="radio"
@@ -385,8 +385,8 @@ function PackageSingle() {
             </div>
 
             <div className="GroupRadio">
-              <h4>Date :</h4>
-              <input type="date" id="Sharing" name="type" required />
+              <div className="title">Date :</div>
+              <input type="date" id="Date" name="type" required />
             </div>
           </div>
           {/*  */}
@@ -507,8 +507,8 @@ function PackageSingle() {
                           fetchpriority="low"
                           height="300"
                           width="300"
-                          alt={item.value.name}
-                          title={item.value.name}
+                          alt={item.value.nameBreakfast}
+                          title={item.value.nameBreakfast}
                           src={
                             `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
                             item.value.imageBreakfast.path
@@ -519,6 +519,45 @@ function PackageSingle() {
                       <div className="RightHolder">
                         <div>{item.value.nameBreakfast}</div>
                         <p>{item.value.detailsBreakfast}</p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+        {/* Details */}
+        <div
+          style={{
+            width: "100%",
+          }}
+        >
+          <div className="Details">Menu - Dinner</div>
+
+          <div className="availabilityMenu">
+            {post.menu_dinner &&
+              post.menu_dinner.map((item, index) => {
+                return (
+                  <>
+                    <div className="HoldMenu" key={index}>
+                      <div className="LeftName">
+                        <img
+                          className="availabilityMenuImage"
+                          fetchpriority="low"
+                          height="300"
+                          width="300"
+                          alt={item.value.nameDinner}
+                          title={item.value.nameDinner}
+                          src={
+                            `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+                            item.value.imageDinner.path
+                          }
+                        />
+                      </div>
+
+                      <div className="RightHolder">
+                        <div>{item.value.nameDinner}</div>
+                        <p>{item.value.detailsDinner}</p>
                       </div>
                     </div>
                   </>
