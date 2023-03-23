@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Home.css";
-import Home_Slider from "../../components/Home_Slider/Home_Slider";
-import Home_Packages from "../../components/Package/Package";
+import HomeSlider from "../../components/Home_Slider/Home_Slider";
 
 export default function Home() {
   useEffect(() => {
@@ -11,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div className="Home">
-        <Home_Slider />
+        <HomeSlider />
       </div>
     </>
   );

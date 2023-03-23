@@ -493,32 +493,33 @@ function PackageSingle() {
             width: "100%",
           }}
         >
-          <div className="Details">Menu</div>
+          <div className="Details">Menu - Breakfast</div>
 
-          {names
-            .filter((name) => name.includes("J"))
-            .map((filteredName) => (
-              <li>{filteredName}</li>
-            ))}
-          <div className="availabilityDetils">
-            {post.availability &&
-              post.availability.map((item, index) => {
+          <div className="availabilityMenu">
+            {post.menu_breakfast &&
+              post.menu_breakfast.map((item, index) => {
                 return (
                   <>
-                    <div className="HHH" key={index}>
-                      <img
-                        className="availabilityImage"
-                        fetchpriority="low"
-                        height="300"
-                        width="300"
-                        alt={item.value.name}
-                        title={item.value.name}
-                        src={
-                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
-                          item.value.image.path
-                        }
-                      />
-                      <p>{item.value.name}</p>
+                    <div className="HoldMenu" key={index}>
+                      <div>
+                        <img
+                          className="availabilityImage"
+                          fetchpriority="low"
+                          height="300"
+                          width="300"
+                          alt={item.value.name}
+                          title={item.value.name}
+                          src={
+                            `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+                            item.value.imageBreakfast.path
+                          }
+                        />
+                      </div>
+
+                      <div>
+                        <p>{item.value.nameBreakfast}</p>
+                        <p>{item.value.detailsBreakfast}</p>
+                      </div>
                     </div>
                   </>
                 );
