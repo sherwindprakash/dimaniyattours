@@ -501,9 +501,9 @@ function PackageSingle() {
                 return (
                   <>
                     <div className="HoldMenu" key={index}>
-                      <div>
+                      <div className="LeftName">
                         <img
-                          className="availabilityImage"
+                          className="availabilityMenuImage"
                           fetchpriority="low"
                           height="300"
                           width="300"
@@ -516,8 +516,8 @@ function PackageSingle() {
                         />
                       </div>
 
-                      <div>
-                        <p>{item.value.nameBreakfast}</p>
+                      <div className="RightHolder">
+                        <div>{item.value.nameBreakfast}</div>
                         <p>{item.value.detailsBreakfast}</p>
                       </div>
                     </div>

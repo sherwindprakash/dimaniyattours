@@ -443,3 +443,29 @@ span.not-checked-item {
         width: 100%;
     }
 }
+
+img.availabilityMenuImage {
+    width: 150px;
+}
+.availabilityMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.HoldMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 49%;
+    margin-right: 1%;
+}
+.RightHolder {
+    padding-left: 10px;
+}
+.RightHolder p {
+    margin-bottom: 0;
+}
+.RightHolder div {
+    font-weight: 500;
+}
