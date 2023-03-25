@@ -37,6 +37,7 @@ div#sidebar-id {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    filter: drop-shadow(5px 0px 2px rgba(0, 0, 0, 0.1));
  
 }
 .SM-SlidMenu {

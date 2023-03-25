@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Package.css";
@@ -11,6 +12,18 @@ import COMMNT from "../../assets/comment-material-2-svgrepo-com.svg";
 import COMMNTW from "../../assets/comment-material-2-svgrepo-com-White.svg";
 import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
+
+import Form from "../../components/Form/From";
+// Gallery
+import LightGallery from "lightgallery/react";
+// import styles
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+// import plugins if you need
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+//
 
 function PackageSingle() {
   const [value, setValue] = useState(0);
@@ -58,8 +71,6 @@ function PackageSingle() {
     checked.includes(item) ? "checked-item" : "not-checked-item";
   //
 
-  const names = ["James", "John", "Paul", "Ringo", "George"];
-
   let params = useParams();
 
   const [post, setPost] = React.useState();
@@ -67,7 +78,7 @@ function PackageSingle() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost/dimaniyattours_api/admin/admin/api/collections/get/package?token=22f8709abba293936facc262597237&filter[title_slug]=" +
+        "http://localhost/admin/api/collections/get/package?token=22f8709abba293936facc262597237&filter[title_slug]=" +
           params.slug,
         {
           method: "get",
@@ -98,10 +109,7 @@ function PackageSingle() {
             width="480"
             alt={post.title}
             title={post.title}
-            src={
-              `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
-              post.image.path
-            }
+            src={`http://localhost/admin/storage/uploads/` + post.image.path}
             style={{
               marginBottom: "30px",
             }}
@@ -167,6 +175,7 @@ function PackageSingle() {
                       href={post.map}
                       target="_blank"
                       title="Google Map"
+                      rel="noreferrer"
                     >
                       <picture>
                         <source
@@ -231,7 +240,7 @@ function PackageSingle() {
                           href="#close"
                           aria-label="Close"
                         ></a>
-                        <div className="modal-title">Modal title</div>
+                        <div className="modal-title">Give your comment</div>
                       </div>
                       <div className="modal-body">
                         <div className="content">
@@ -240,7 +249,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-footer">
                         <a className="btn btn-link" href="#close">
-                          Close
+                          &times;
                         </a>
                       </div>
                     </div>
@@ -287,16 +296,16 @@ function PackageSingle() {
                           href="#close"
                           aria-label="Close"
                         ></a>
-                        <div className="modal-title">Modal title</div>
+                        <div className="modal-title">Inquary</div>
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <p>This is the content inside the modal.</p>
+                          <Form />
                         </div>
                       </div>
                       <div className="modal-footer">
                         <a className="btn btn-link" href="#close">
-                          Close
+                          &times;
                         </a>
                       </div>
                     </div>
@@ -323,6 +332,7 @@ function PackageSingle() {
                   onChange={handleChange}
                   min="0"
                   max="100"
+                  required
                 />
               </div>
             </div>
@@ -439,7 +449,7 @@ function PackageSingle() {
                         alt={item.value.name}
                         title={item.value.name}
                         src={
-                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+                          `http://localhost/admin/storage/uploads/` +
                           item.value.image.path
                         }
                       />
@@ -456,115 +466,171 @@ function PackageSingle() {
         </div>
 
         {/* Details */}
-        <div
-          style={{
-            width: "100%",
-          }}
-        >
-          <div className="Details">Trip Provide</div>
-          <div className="availabilityDetils">
-            {post.availability &&
-              post.availability.map((item, index) => {
-                return (
-                  <>
-                    <div className="HHH" key={index}>
-                      <img
-                        className="availabilityImage"
-                        fetchpriority="low"
-                        height="300"
-                        width="300"
-                        alt={item.value.name}
-                        title={item.value.name}
-                        src={
-                          `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
-                          item.value.image.path
-                        }
-                      />
-                      <p>{item.value.name}</p>
-                    </div>
-                  </>
-                );
-              })}
-          </div>
-        </div>
-        {/* Details */}
-        <div
-          style={{
-            width: "100%",
-          }}
-        >
-          <div className="Details">Menu - Breakfast</div>
-
-          <div className="availabilityMenu">
-            {post.menu_breakfast &&
-              post.menu_breakfast.map((item, index) => {
-                return (
-                  <>
-                    <div className="HoldMenu" key={index}>
-                      <div className="LeftName">
+        {post.availability ? (
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <div className="Details">Trip Provide</div>
+            <div className="availabilityDetils">
+              {post.availability &&
+                post.availability.map((item, index) => {
+                  return (
+                    <>
+                      <div className="HHH" key={index}>
                         <img
-                          className="availabilityMenuImage"
+                          className="availabilityImage"
                           fetchpriority="low"
                           height="300"
                           width="300"
-                          alt={item.value.nameBreakfast}
-                          title={item.value.nameBreakfast}
+                          alt={item.value.name}
+                          title={item.value.name}
                           src={
-                            `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
-                            item.value.imageBreakfast.path
+                            `http://localhost/admin/storage/uploads/` +
+                            item.value.image.path
                           }
                         />
+                        <p>{item.value.name}</p>
                       </div>
-
-                      <div className="RightHolder">
-                        <div>{item.value.nameBreakfast}</div>
-                        <p>{item.value.detailsBreakfast}</p>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
+                    </>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
+
         {/* Details */}
-        <div
-          style={{
-            width: "100%",
-          }}
-        >
-          <div className="Details">Menu - Dinner</div>
+        {post.menu_breakfast ? (
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <div className="Details">Menu - Breakfast</div>
 
-          <div className="availabilityMenu">
-            {post.menu_dinner &&
-              post.menu_dinner.map((item, index) => {
-                return (
-                  <>
-                    <div className="HoldMenu" key={index}>
-                      <div className="LeftName">
-                        <img
-                          className="availabilityMenuImage"
-                          fetchpriority="low"
-                          height="300"
-                          width="300"
-                          alt={item.value.nameDinner}
-                          title={item.value.nameDinner}
-                          src={
-                            `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
-                            item.value.imageDinner.path
-                          }
-                        />
-                      </div>
+            <div className="availabilityMenu">
+              {post.menu_breakfast &&
+                post.menu_breakfast.map((item, index) => {
+                  return (
+                    <>
+                      <div className="HoldMenu" key={index}>
+                        <div className="LeftName">
+                          <img
+                            className="availabilityMenuImage"
+                            fetchpriority="low"
+                            height="300"
+                            width="300"
+                            alt={item.value.nameBreakfast}
+                            title={item.value.nameBreakfast}
+                            src={
+                              `http://localhost/admin/storage/uploads/` +
+                              item.value.imageBreakfast.path
+                            }
+                          />
+                        </div>
 
-                      <div className="RightHolder">
-                        <div>{item.value.nameDinner}</div>
-                        <p>{item.value.detailsDinner}</p>
+                        <div className="RightHolder">
+                          <div>{item.value.nameBreakfast}</div>
+                          <p>{item.value.detailsBreakfast}</p>
+                        </div>
                       </div>
-                    </div>
-                  </>
-                );
-              })}
+                    </>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
+
+        {/* Details */}
+        {post.menu_dinner ? (
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <div className="Details">Menu - Dinner</div>
+
+            <div className="availabilityMenu">
+              {post.menu_dinner &&
+                post.menu_dinner.map((item, index) => {
+                  return (
+                    <>
+                      <div className="HoldMenu" key={index}>
+                        <div className="LeftName">
+                          <img
+                            className="availabilityMenuImage"
+                            fetchpriority="low"
+                            height="300"
+                            width="300"
+                            alt={item.value.nameDinner}
+                            title={item.value.nameDinner}
+                            src={
+                              `http://localhost/admin/storage/uploads/` +
+                              item.value.imageDinner.path
+                            }
+                          />
+                        </div>
+
+                        <div className="RightHolder">
+                          <div>{item.value.nameDinner}</div>
+                          <p>{item.value.detailsDinner}</p>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+            </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        {/* Details */}
+        {post.gallery ? (
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <div className="Details">Gallery</div>
+
+            <div className="availabilityMenu">
+              <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
+                {post.gallery &&
+                  post.gallery.map((item, index) => {
+                    return (
+                      <>
+                        <a
+                          href={
+                            `http://localhost` +
+                            item.path
+                          }
+                          key={index}
+                        >
+                          <img
+                            className="PopIMG"
+                            alt={item.meta.title}
+                            title={item.meta.title}
+                            src={
+                              `http://localhost` +
+                              item.path
+                            }
+                          />
+                        </a>
+                      </>
+                    );
+                  })}
+              </LightGallery>
+            </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </>
   );

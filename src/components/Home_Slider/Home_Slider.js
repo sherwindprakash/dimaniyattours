@@ -62,7 +62,7 @@ export default function App() {
 
 
         <SwiperSlide>
-        <Link title="Shorts Trips" to="en/shorts-trips/">
+        <Link title="Shorts Trips" to="/en/shorts-trips/">
         <div className="contHolder" style={{
             transform: "rotate(180deg)"
           }}>
@@ -95,8 +95,17 @@ export default function App() {
         </SwiperSlide>
 
         <SwiperSlide>
-        <Link title="Gallery" to="/en/gallery/">
-          <img fetchpriority="low" height="700" width="480" alt="Gallery" title="Gallery" src={IMG} />
+        <Link title="Gallery" to="/en/marine-service/">
+        <div className="contHolder" style={{
+            transform: "rotate(180deg)"
+          }}>
+          <h3 style={{
+            transform: "rotate(180deg)",
+            marginTop: "20px"
+          }}>Marine Service</h3>
+          
+          </div>
+          <img fetchpriority="low" height="700" width="480" alt="Marine Service" title="Marine Service" src={IMG} />
           </Link>
         </SwiperSlide>
 

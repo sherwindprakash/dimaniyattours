@@ -22,7 +22,7 @@ const Home = lazy(() => import("./Pages/Home/Home"));
 const Package = lazy(() => import("./Pages/Package/Package"));
 const PackageSingle = lazy(() => import("./Pages/Package/Single"));
 const Destination = lazy(() => import("./Pages/Destination/Destination"));
-const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
+const Aboutus = lazy(() => import("./Pages/Aboutus/Aboutus"));
 const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const SpecialOffers = lazy(() => import("./Pages/SpecialOffers/SpecialOffers"));
 const User = lazy(() => import("./Pages/User/User"));
@@ -99,7 +99,7 @@ function App() {
               <Route path="/en/packages/" element={<Package />} />
               <Route path="/en/packages/:slug/" element={<PackageSingle />} />
               <Route path="/en/destination/" element={<Destination />} />
-              <Route path="/en/gallery/" element={<Gallery />} />
+              <Route path="/en/about-us/" element={<Aboutus />} />
               <Route path="/en/contact/" element={<Contact />} />
               <Route path="/en/special-offers/" element={<SpecialOffers />} />
               <Route path="/en/user/" element={<User />} />

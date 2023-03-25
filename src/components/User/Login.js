@@ -32,7 +32,7 @@ const HomeSignUp = () => {
     };
 
     fetch(
-      "http://localhost/dimaniyattours_api/admin/admin/api/cockpit/saveUser?token=22f8709abba293936facc262597237",
+      "http://localhost/admin/api/cockpit/saveUser?token=22f8709abba293936facc262597237",
       requestOptions
     )
       .then((response) => response.text())

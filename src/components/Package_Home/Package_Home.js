@@ -1,9 +1,8 @@
 import React from "react";
 import "./Package.css";
-import PackageSingle from "../../components/Package/Package";
+import PackageSingle from "../Package/Package";
 
 class Package extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +33,11 @@ class Package extends React.Component {
       );
     return (
       <>
-        <h1>Pakages</h1>
+        <h1 className="HomePackTitle">
+            Pakage Tours
+            </h1>
+            <small className="ExDetails">*All trips include free refreshments, fruit or snacks and snorkeling equipment on board. Also we provide water sports such as banana boat , tube boat , etc.</small>
+
         <div className="Package">
           {items &&
             items.map((item) => (

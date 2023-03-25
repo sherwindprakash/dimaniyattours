@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import "./Gallery.css";
+import "./Aboutus.css";
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = `Dimaniyat Tours | Gallery`;
+    document.title = `Dimaniyat Tours | About us`;
   });
 
   return (
     <>
-      <div className="Gallery">
-        <h1>Gallery</h1>
+      <div className="Aboutus">
+        <h1>About us</h1>
         https://www.lightgalleryjs.com/docs/react/ LINK Type
       </div>
     </>

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable jsx-a11y/anchor-has-content */
+import React from "react";
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import "./Head.css";
 import siteLogo from "../assets/main-logo.webp";
@@ -58,8 +59,8 @@ export default function Header() {
               <CustomLink title="Destination" to="/en/destination/">
                 Destination
               </CustomLink>
-              <CustomLink title="Gallery" to="/en/gallery/">
-                Gallery
+              <CustomLink title="About us" to="/en/about-us/">
+              About us
               </CustomLink>
               <CustomLink title="Contact" to="/en/contact/">
                 Contact
@@ -130,8 +131,8 @@ export default function Header() {
           <CustomLink title="Destination" to="/en/destination/">
             Destination
           </CustomLink>
-          <CustomLink title="Gallery" to="/en/gallery/">
-            Gallery
+          <CustomLink title="About us" to="/en/about-us/">
+          About us
           </CustomLink>
           <CustomLink title="Contact" to="/en/contact/">
             Contact

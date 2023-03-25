@@ -38,7 +38,11 @@ img.iconWhatsApp {
     border-radius: 50%;
     right: 48px;
 }
-
+.FUDiv {
+    font-weight: 100;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
 @media only screen and (max-width: 500px) {
     .footerHolder{
     width: 100%;

@@ -41,7 +41,7 @@ function RadioButton({ Price, Name, Image, Index }) {
             alt={Name}
             title={Name}
             src={
-              `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+              `http://localhost/admin/storage/uploads/` +
               Image
             }
           />

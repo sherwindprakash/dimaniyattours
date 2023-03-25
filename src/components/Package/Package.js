@@ -7,7 +7,7 @@ function PackageSingle({ ID }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost/dimaniyattours_api/admin/admin/api/collections/entry/package/" +
+        "http://localhost/admin/api/collections/entry/package/" +
           ID +
           "?token=22f8709abba293936facc262597237",
         {
@@ -29,7 +29,7 @@ function PackageSingle({ ID }) {
   if (!post) return null;
 
   return (
-    <Link title="Destination" to={post.title_slug}>
+    <Link title="Destination" to={`/en/packages/`+ post.title_slug}>
       <div className="PackageHolder">
         <div className="Title">
           <h2>{post.title}</h2>
@@ -42,7 +42,7 @@ function PackageSingle({ ID }) {
           alt={post.title}
           title={post.title}
           src={
-            `http://localhost/dimaniyattours_api/admin/admin/storage/uploads/` +
+            `http://localhost/admin/storage/uploads/` +
             post.image.path
           }
         />
