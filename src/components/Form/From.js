@@ -1,21 +1,68 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from "react";
+/* eslint-disable jsx-a11y/iframe-has-title */
+import React, { useState } from "react";
 import "./Form.css";
 
-export default function Form() {
- 
+
+const Form = () => {
+  const [FullName, setFullName] = useState("");
+
+  const handleSubmit = (event) => {
+    // 👇️ prevent page refresh
+    event.preventDefault();
+    // DATA
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      user: {
+        user: "prakash@sherwin.com",
+        password: "prakash",
+        email: "prakash@sherwin.com",
+        group: "author",
+        Full_Name: FullName,
+        Nationality: "Male",
+        DayPhone: "96237694",
+        active: true,
+        api_key: true,
+      },
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "http://localhost/admin/api/cockpit/saveUser?token=22f8709abba293936facc262597237",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+    //
+  };
 
   return (
     <>
-     <form id="myform">
-              <div className="inputGroup">
+      <form id="SignUPFrom" className="SignUPForm" onSubmit={handleSubmit}>
+
+      <div className="inputGroup">
                 <label htmlFor="name">Full Name:</label>
                 <input
+                  className="form-input"
                   type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Insert Your Full Name"
+                  id="FullName"
+                  name="FullName"
+                  value={FullName}
+                  onChange={(event) => setFullName(event.target.value)}
+                  required
+                  placeholder="Full Name"
                 />
+
+                
               </div>
 
               <div className="inputGroup">
@@ -54,18 +101,14 @@ export default function Form() {
               <button className="btn" type="submit">
                 Submit
               </button>
-            </form>
 
-            <div
-              id="div1"
-              style={{
-                display: "none",
-              }}
-            >
-              Thank you for taking the time to contact us. We value your
-              feedback and will do our best to respond to your message in a
-              timely and helpful manner. Sincerely, Dimaniyat Tours
-            </div>
+
+
+       
+      </form>
     </>
   );
-}
+};
+
+export default Form;
+
