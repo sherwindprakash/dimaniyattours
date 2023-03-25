@@ -26,6 +26,11 @@ const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
 const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const SpecialOffers = lazy(() => import("./Pages/SpecialOffers/SpecialOffers"));
 const User = lazy(() => import("./Pages/User/User"));
+const ShortsTrips = lazy(() => import("./Pages/Shorts_Trips/Shorts_Trips"));
+const MarineService = lazy(() => import("./Pages/MarineService/MarineService"));
+
+
+
 
 function App() {
   return (
@@ -98,6 +103,8 @@ function App() {
               <Route path="/en/contact/" element={<Contact />} />
               <Route path="/en/special-offers/" element={<SpecialOffers />} />
               <Route path="/en/user/" element={<User />} />
+              <Route path="/en/shorts-trips/" element={<ShortsTrips />} />
+              <Route path="/en/marine-service/" element={<MarineService />} />
             </Routes>
           </Suspense>
         </div>

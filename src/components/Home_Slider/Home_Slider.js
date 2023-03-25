@@ -62,8 +62,17 @@ export default function App() {
 
 
         <SwiperSlide>
-        <Link title="Gallery" to="/en/gallery/">
-          <img fetchpriority="low" height="700" width="480" alt="Gallery" title="Gallery" src={IMG} />
+        <Link title="Shorts Trips" to="en/shorts-trips/">
+        <div className="contHolder" style={{
+            transform: "rotate(180deg)"
+          }}>
+          <h3 style={{
+            transform: "rotate(180deg)",
+            marginTop: "20px"
+          }}>Shorts Trips</h3>
+          
+          </div>
+          <img fetchpriority="low" height="700" width="480" alt="Gallery" title="Shorts Trips" src={IMG} />
           </Link>
         </SwiperSlide>
 
@@ -82,6 +91,12 @@ export default function App() {
           </div>
           <img className="Next" alt="Next" title="Next" src={NEXT} />
           <img fetchpriority="low" height="700" width="480" alt="Special Offers" title="Special Offers" src={IMG} />
+          </Link>
+        </SwiperSlide>
+
+        <SwiperSlide>
+        <Link title="Gallery" to="/en/gallery/">
+          <img fetchpriority="low" height="700" width="480" alt="Gallery" title="Gallery" src={IMG} />
           </Link>
         </SwiperSlide>
 
