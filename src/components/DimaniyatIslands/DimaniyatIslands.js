@@ -65,9 +65,9 @@ export default function Shorts_Trips() {
               height="480"
               src="https://www.youtube-nocookie.com/embed/1J_EmN0ZoeE"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
             {/*  */}
           </div>

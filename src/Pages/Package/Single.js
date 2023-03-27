@@ -244,7 +244,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <p>This is the content inside the modal.</p>
+                          <Form name={"comments"} />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -300,7 +300,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form />
+                          <Form name={"contacts"} />
                         </div>
                       </div>
                       <div className="modal-footer">

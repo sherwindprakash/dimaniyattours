@@ -3,7 +3,13 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-const Form = () => {
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css'; // for React, Vue and Svelte
+
+// Create an instance of Notyf
+const notyf = new Notyf();
+
+const Form = (props) => {
   const [FullName, setFullName] = useState("");
   const [Email, setEmail] = useState("");
   const [Excerpt, setExcerpt] = useState("");
@@ -33,18 +39,29 @@ const Form = () => {
     };
 
     fetch(
-      "http://localhost/admin/api/collections/save/contacts?token=22f8709abba293936facc262597237",
+      "http://localhost/admin/api/collections/save/" + props.name + "?token=22f8709abba293936facc262597237",
       requestOptions
     )
 
     
 
+    
+
       .then((response) => response.json())
       .then(result => {
-        console.log(result)
+        //console.log(result)
+        notyf.success('Thank you for your interest in '+ props.name + ' us and we will get back to you as soon as possible.');
+
+        setTimeout(function(){
+          window.location.reload(false);
+       }, 2000);
+
+        
       })
       .catch(error => {
-        console.log(error)
+        //console.log(error)
+        notyf.error('Not Successful.');
+
       })
     //
   };

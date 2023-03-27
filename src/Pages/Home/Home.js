@@ -17,7 +17,7 @@ export default function Home() {
         <HomeSlider />
         <HomePackage />
         <DimaniyatIslands />
-        <Comments/>
+        <Comments />
       </div>
     </>
   );
