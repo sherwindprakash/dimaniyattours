@@ -46,6 +46,13 @@ function PackageSingle() {
     setValue3(e.target.value);
   };
 
+  const [value4, setValue4] = useState(0);
+
+  const handleChange4 = (e) => {
+    setValue4(e.target.value);
+  };
+
+
   //
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -115,6 +122,13 @@ function PackageSingle() {
     <>
       <div className="PakageSingleBlock">
         <div className="LeftHolder">
+
+          
+{post.SpecialOffers  ?  <div className="SpecialOffer">
+            Special Offer
+          </div> : ''}
+
+         
           <img
             className="PackageHolderImage"
             fetchpriority="low"
@@ -421,9 +435,47 @@ function PackageSingle() {
                   id="Date"
                   name="type"
                   required
+                  onChange={handleChange4}
                 />
               </label>
             </div>
+
+             {/* PAY FORM */}
+          {value4   ? 
+           <div className="modal" id="pay">
+           <a className="modal-overlay" href="#close" aria-label="Close"></a>
+           <div className="modal-container" role="document">
+             <div className="modal-header" style={{
+              padding: "0"
+             }}>
+               <a
+                 className="btn btn-clear float-right"
+                 href="#close"
+                 aria-label="Close"
+               ></a>
+               
+             </div>
+             <div className="modal-body">
+               <div className="content">
+                 <Pay  Total= {value * post.price_adults +
+                 value2 * post.price_kids +
+                 Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2} Addons={checked} 
+                 Date={value4}
+                 />
+
+                
+               </div>
+             </div>
+             <div className="modal-footer">
+               <a className="btn btn-link" href="#close">
+                 &times;
+               </a>
+             </div>
+           </div>
+         </div>: <small class="SmallNote">* Please input your date</small>}
+          {/*  */}
+
+
           </div>
           {/*  */}
           {/* Totals */}
@@ -445,20 +497,13 @@ function PackageSingle() {
                 USD as Advanced Booking
               </a> */}
 
-{value | value2 > null  ? <a title="Pay Now" href="#pay">
+{value | value2  > null  ? <a title="Pay Now" href="#pay">
                 Pay{" "}
                 {value * post.price_adults +
                   value2 * post.price_kids +
                   Number(checkedItems)}{".00 "}
                 USD{" "} Now
-              </a> : '* Please input your person count'}
-
-
-              
-
-
-
-              
+              </a> : <small className="Error">* Please input your Quantity</small>}
 
 
             </div>
@@ -476,35 +521,7 @@ function PackageSingle() {
               </Link>
             </div>
           )}
-          {/* PAY FORM */}
-          <div className="modal" id="pay">
-            <a className="modal-overlay" href="#close" aria-label="Close"></a>
-            <div className="modal-container" role="document">
-              <div className="modal-header">
-                <a
-                  className="btn btn-clear float-right"
-                  href="#close"
-                  aria-label="Close"
-                ></a>
-                
-              </div>
-              <div className="modal-body">
-                <div className="content">
-                  <Pay  Total= {value * post.price_adults +
-                  value2 * post.price_kids +
-                  Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2} Addons={checked} />
-
-                 
-                </div>
-              </div>
-              <div className="modal-footer">
-                <a className="btn btn-link" href="#close">
-                  &times;
-                </a>
-              </div>
-            </div>
-          </div>
-          {/*  */}
+         
 
           {/* Travel add-ons and extras */}
           {value3 === "Private" ? (

@@ -9,7 +9,7 @@ export default function Shorts_Trips() {
   return (
     <>
       <div className="Shorts_Trips">
-        <h1>Shorts_Trips</h1>
+        <h1>Shorts Trips</h1>
         https://www.lightgalleryjs.com/docs/react/ LINK Type
       </div>
     </>
