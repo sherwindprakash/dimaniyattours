@@ -1,24 +1,30 @@
 .Aboutus {
     max-width: 1200px;
 }
+
 .Holder {
     margin-top: 40px;
 }
+
 .SingleHolder h3 {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
 .RawDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .SingleHolder {
     width: 50%;
 }
+
 .SingleHolder ul {
     width: 75%;
 }
+
 .ImageHolder {
     display: flex;
     flex-direction: row;
@@ -26,20 +32,29 @@
     justify-content: space-between;
     margin-top: 40px;
 }
+
 img.myImg {
-    width: 200px;
-    height: 200px;
+    width: 31%;
+    height: 250px;
     object-fit: cover;
 }
 
+a.MServices {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 15px;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 900px) {
-    .SingleHolder, .SingleHolder ul {
+
+    .SingleHolder,
+    .SingleHolder ul {
         width: 100%;
     }
-    img.myImg {
-        width: 150px;
-        height: 150px;
-    }
+
 }
 
 

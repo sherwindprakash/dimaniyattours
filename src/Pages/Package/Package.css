@@ -103,7 +103,7 @@ input.InputDesign {
     top: 0;
     position: sticky;
     z-index: 1;
-    background: white;
+    background: var(--bg-color);
 }
 
 small.SmallNote {
@@ -192,9 +192,6 @@ img.timeImage {
 .availabilityDetils .HHH {
     text-align: center;
     width: min-content;
-}
-a.btn.btn-link {
-    font-size: 30px;
 }
 
 @media only screen and (max-width: 1180px) {

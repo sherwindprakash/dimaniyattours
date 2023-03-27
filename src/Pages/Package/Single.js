@@ -26,6 +26,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 //
 
 function PackageSingle() {
+  //
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
 
@@ -89,7 +90,7 @@ function PackageSingle() {
         .json()
 
         .then(function (response) {
-          console.log("Package Single", response.entries[0]);
+          //console.log("Package Single", response.entries[0]);
           setPost(response.entries[0]);
         });
     };
@@ -316,7 +317,6 @@ function PackageSingle() {
             </div>
           </div>
           {/* Get Value */}
-
           <div className="GenValue">
             <div className="SingleH">
               <div>
@@ -357,32 +357,38 @@ function PackageSingle() {
               * Please input your person count
             </small>
           </div>
-
+          {/* Radio */}
           <div className="ExtraCalucul">
             <div className="GroupRadio">
               <div className="title">Type :</div>
               <div className="Group">
-                <input
-                  type="radio"
-                  id="Sharing"
-                  name="type"
-                  value="Sharing"
-                  onChange={handleChange3}
-                  //checked
-                  required
-                />
-                <label htmlFor="no">Sharing</label>
+                <label htmlFor="no">
+                  <input
+                    type="radio"
+                    id="Sharing"
+                    name="type"
+                    value="Sharing"
+                    aria-label="Sharing"
+                    onChange={handleChange3}
+                    //checked
+                    required
+                  />
+                  Sharing
+                </label>
               </div>
               <div className="Group">
-                <input
-                  type="radio"
-                  id="Private"
-                  name="type"
-                  value="Private"
-                  onChange={handleChange3}
-                  required
-                />
-                <label htmlFor="Private">Private</label>
+                <label htmlFor="Private">
+                  <input
+                    type="radio"
+                    id="Private"
+                    name="type"
+                    value="Private"
+                    aria-label="Private"
+                    onChange={handleChange3}
+                    required
+                  />
+                  Private
+                </label>
               </div>
 
               <small
@@ -396,19 +402,38 @@ function PackageSingle() {
 
             <div className="GroupRadio">
               <div className="title">Date :</div>
-              <input type="date" id="Date" name="type" required />
+              <label htmlFor="Date">
+                <input
+                  aria-label="Date"
+                  type="date"
+                  id="Date"
+                  name="type"
+                  required
+                />
+              </label>
             </div>
           </div>
           {/*  */}
 
           {/* Totals */}
-          <div className="TotalHolder">
-            Total{" "}
-            {value * post.price_adults +
-              value2 * post.price_kids +
-              Number(checkedItems)}{" "}
-            OMR
-          </div>
+          {sessionStorage["api_key"] ? (
+            <div className="TotalHolder">
+              Total{" "}
+              {value * post.price_adults +
+                value2 * post.price_kids +
+                Number(checkedItems)}{" "}
+              OMR
+            </div>
+          ) : (
+            <div className="TotalHolder">
+              Total{" "}
+              {value * post.price_adults +
+                value2 * post.price_kids +
+                Number(checkedItems)}{" "}
+              OMR
+            </div>
+          )}
+
           {/* Travel add-ons and extras */}
           {value3 === "Private" ? (
             <div
@@ -605,21 +630,12 @@ function PackageSingle() {
                   post.gallery.map((item, index) => {
                     return (
                       <>
-                        <a
-                          href={
-                            `http://localhost` +
-                            item.path
-                          }
-                          key={index}
-                        >
+                        <a href={`http://localhost` + item.path} key={index}>
                           <img
                             className="PopIMG"
                             alt={item.meta.title}
                             title={item.meta.title}
-                            src={
-                              `http://localhost` +
-                              item.path
-                            }
+                            src={`http://localhost` + item.path}
                           />
                         </a>
                       </>

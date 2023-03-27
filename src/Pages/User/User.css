@@ -1,0 +1,26 @@
+.Dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.DHolder {
+    width: 50%;
+    padding: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+    .Dashboard {
+        width: 100%;
+    }
+
+    .DHolder {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid var(--bg-color-light);
+        padding-bottom: 30px;
+        margin-top: 20px;
+    }
+
+}

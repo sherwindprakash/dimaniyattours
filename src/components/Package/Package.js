@@ -29,7 +29,7 @@ function PackageSingle({ ID }) {
   if (!post) return null;
 
   return (
-    <Link title="Destination" to={`/en/packages/`+ post.title_slug}>
+    <Link title="Destination" to={`/en/packages/` + post.title_slug}>
       <div className="PackageHolder">
         <div className="Title">
           <h2>{post.title}</h2>
@@ -41,10 +41,7 @@ function PackageSingle({ ID }) {
           width="480"
           alt={post.title}
           title={post.title}
-          src={
-            `http://localhost/admin/storage/uploads/` +
-            post.image.path
-          }
+          src={`http://localhost/admin/storage/uploads/` + post.image.path}
         />
       </div>
     </Link>

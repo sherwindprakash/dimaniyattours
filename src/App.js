@@ -29,9 +29,6 @@ const User = lazy(() => import("./Pages/User/User"));
 const ShortsTrips = lazy(() => import("./Pages/Shorts_Trips/Shorts_Trips"));
 const MarineService = lazy(() => import("./Pages/MarineService/MarineService"));
 
-
-
-
 function App() {
   return (
     <>

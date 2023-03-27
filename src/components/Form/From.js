@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-import { Notyf } from 'notyf';
-import 'notyf/notyf.min.css'; // for React, Vue and Svelte
+import { Notyf } from "notyf";
+import "notyf/notyf.min.css"; // for React, Vue and Svelte
 
 // Create an instance of Notyf
 const notyf = new Notyf();
@@ -39,30 +39,28 @@ const Form = (props) => {
     };
 
     fetch(
-      "http://localhost/admin/api/collections/save/" + props.name + "?token=22f8709abba293936facc262597237",
+      "http://localhost/admin/api/collections/save/" +
+        props.name +
+        "?token=22f8709abba293936facc262597237",
       requestOptions
     )
-
-    
-
-    
-
       .then((response) => response.json())
-      .then(result => {
+      .then((result) => {
         //console.log(result)
-        notyf.success('Thank you for your interest in '+ props.name + ' us and we will get back to you as soon as possible.');
+        notyf.success(
+          "Thank you for your interest in " +
+            props.name +
+            " us and we will get back to you as soon as possible."
+        );
 
-        setTimeout(function(){
+        setTimeout(function () {
           window.location.reload(false);
-       }, 2000);
-
-        
+        }, 2000);
       })
-      .catch(error => {
+      .catch((error) => {
         //console.log(error)
-        notyf.error('Not Successful.');
-
-      })
+        notyf.error("Not Successful.");
+      });
     //
   };
 
@@ -74,8 +72,8 @@ const Form = (props) => {
           <input
             className="form-input"
             type="text"
-            id="FullName"
-            name="FullName"
+            id={`FullName_` + props.name}
+            name={`FullName_` + props.name}
             value={FullName}
             onChange={(event) => setFullName(event.target.value)}
             required
@@ -89,8 +87,8 @@ const Form = (props) => {
           <input
             className="form-input"
             type="number"
-            id="Phone"
-            name="Phone"
+            id={`Phone_` + props.name}
+            name={`Phone_` + props.name}
             value={Phone}
             onChange={(event) => setPhone(event.target.value)}
             required
@@ -104,8 +102,8 @@ const Form = (props) => {
           <input
             className="form-input"
             type="email"
-            id="Email"
-            name="Email"
+            id={`Email_` + props.name}
+            name={`Email_` + props.name}
             value={Email}
             onChange={(event) => setEmail(event.target.value)}
             required
@@ -113,19 +111,11 @@ const Form = (props) => {
           />
         </div>
 
-        <div
-          className="inputGroup"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flexWrap: "wrap",
-            alignItems: "flex-start",
-          }}
-        >
+        <div className="inputGroup textarea">
           <label htmlFor="message">Message:</label>
           <textarea
             name="message"
-            id="message"
+            id={`Message_` + props.name}
             value={Excerpt}
             onChange={(event) => setExcerpt(event.target.value)}
             required

@@ -1,0 +1,158 @@
+.MarineService {
+    max-width: 1200px;
+}
+
+
+.Holder {
+    margin-top: 40px;
+}
+
+.SingleHolderMS h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.RawDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.SingleHolderMS {
+    width: 31%;
+}
+
+.SingleHolderMS ul {
+    width: 75%;
+}
+
+.ImageHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+img.myImg {
+    width: 31%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+    .SingleHolderMS,
+    .SingleHolderMS ul {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    img.myImg {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 15px;
+    }
+}
+
+
+/* MODEL */
+
+.modal {
+    align-items: center;
+    bottom: 0;
+    display: none;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0.4rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.modal.active,
+.modal:target {
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    z-index: 400;
+}
+
+.modal.active .modal-overlay,
+.modal:target .modal-overlay {
+    background: rgba(247, 248, 249, 0.75);
+    bottom: 0;
+    cursor: default;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal.active .modal-container,
+.modal:target .modal-container {
+    animation: slide-down 0.2s ease 1;
+    z-index: 1;
+}
+
+.modal.modal-sm .modal-container {
+    max-width: 320px;
+    padding: 0 0.4rem;
+}
+
+.modal.modal-lg .modal-overlay {
+    background: #fff;
+}
+
+.modal.modal-lg .modal-container {
+    box-shadow: none;
+    max-width: 960px;
+}
+
+.modal-container {
+    background: var(--bg-color);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 1rem rgb(48 55 66 / 9%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-height: 75vh;
+    max-width: 640px;
+    padding: 0 0.8rem;
+    width: 100%;
+}
+
+.modal-container.modal-fullheight {
+    max-height: 100vh;
+}
+
+.modal-container .modal-header {
+    padding: 0.8rem;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.modal-container .modal-body {
+    overflow-y: auto;
+    padding: 0.8rem;
+    position: relative;
+}
+
+.modal-container .modal-footer {
+    padding: 0.8rem;
+    text-align: right;
+}

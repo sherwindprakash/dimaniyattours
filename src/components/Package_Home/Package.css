@@ -10,7 +10,10 @@
 .PackSingle {
     width: 32%;
     margin-bottom: 1%;
+
 }
+
+
 
 .PackageHolder {
     position: relative;
@@ -60,7 +63,7 @@ small.ExDetails {
     small.ExDetails {
         width: 100%;
     }
-    
+
 }
 
 

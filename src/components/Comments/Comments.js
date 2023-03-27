@@ -28,12 +28,7 @@ export default function Comments() {
         </h1>
 
         {Info ? (
-          <div
-            style={{
-              width: "100%",
-            }}
-          >
-            
+          <div className="CommentsMaster">
             {Info &&
               Info.map((item, index) => {
                 return (
