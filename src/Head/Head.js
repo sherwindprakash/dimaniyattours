@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from "react";
+import React, { useState } from "react";
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import "./Head.css";
 import siteLogo from "../assets/main-logo.webp";
@@ -17,9 +17,25 @@ import UserDark from "../assets/user-dark.svg";
 
 export default function Header() {
   //
+  const [FullName, setFullName] = useState();
 
+  var raw = "";
+
+  var requestOptions = {
+    method: "POST",
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(
+    "http://localhost/admin/api/cockpit/listUsers?token=22f8709abba293936facc262597237&filter[api_key]=" +
+      sessionStorage["api_key"],
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => setFullName(result[0].Full_Name))
+    .catch((error) => console.log("error", error));
   //
-
   const { pathname } = useLocation();
   return (
     <header>
@@ -60,7 +76,7 @@ export default function Header() {
                 Destination
               </CustomLink>
               <CustomLink title="About us" to="/en/about-us/">
-              About us
+                About us
               </CustomLink>
               <CustomLink title="Contact" to="/en/contact/">
                 Contact
@@ -132,24 +148,68 @@ export default function Header() {
             Destination
           </CustomLink>
           <CustomLink title="About us" to="/en/about-us/">
-          About us
+            About us
           </CustomLink>
           <CustomLink title="Contact" to="/en/contact/">
             Contact
           </CustomLink>
-          <CustomLink title="User" to="/en/user/">
-            <picture>
-              <source srcSet={UserDark} media="(prefers-color-scheme: dark)" />
-              <img
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Dimaniyat Tours | User Profile"
-                title="Dimaniyat Tours | User Profile"
-                src={User}
-                className="icon-USER"
-              />
-            </picture>
+          <CustomLink
+            title={FullName}
+            to="/en/user/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {/* Details */}
+            {sessionStorage["api_key"] ? (
+              <div
+                style={{
+                  width: "100%",
+                }}
+              >
+                <picture>
+                  <source
+                    srcSet={UserDark}
+                    media="(prefers-color-scheme: dark)"
+                  />
+                  <img
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      margin: "0",
+                      padding: "0",
+                      top: "3px",
+                      marginRight: "5px",
+                    }}
+                    loading="lazy"
+                    width="40"
+                    height="40"
+                    alt="Dimaniyat Tours | User Profile"
+                    title="Dimaniyat Tours | User Profile"
+                    src={User}
+                    className="icon-USER"
+                  />
+                </picture>
+                {FullName}
+              </div>
+            ) : (
+              <picture>
+                <source
+                  srcSet={UserDark}
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                  alt="Dimaniyat Tours | User Profile"
+                  title="Dimaniyat Tours | User Profile"
+                  src={User}
+                  className="icon-USER"
+                />
+              </picture>
+            )}
           </CustomLink>
         </ul>
       </div>

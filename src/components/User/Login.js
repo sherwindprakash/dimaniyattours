@@ -40,7 +40,7 @@ const HomeSignUp = () => {
           notyf.error("Unauthorized!");
         } else {
           notyf.success("Login success!");
-          setTimeout(() => window.location.reload(), 2000);
+          setTimeout(() => window.location.replace("/en/packages/"), 2000);
         }
       });
     //

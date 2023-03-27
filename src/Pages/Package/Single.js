@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Package.css";
 
 import Time from "../../assets/time-svgrepo-com.svg";
@@ -14,6 +14,8 @@ import EMAIL from "../../assets/message-mail-svgrepo-com.svg";
 import EMAILW from "../../assets/message-mail-svgrepo-com-White.svg";
 
 import Form from "../../components/Form/From";
+import Pay from "../../components/Payment/Payment";
+
 // Gallery
 import LightGallery from "lightgallery/react";
 // import styles
@@ -414,25 +416,61 @@ function PackageSingle() {
             </div>
           </div>
           {/*  */}
-
           {/* Totals */}
           {sessionStorage["api_key"] ? (
             <div className="TotalHolder">
-              Total{" "}
-              {value * post.price_adults +
-                value2 * post.price_kids +
-                Number(checkedItems)}{" "}
-              OMR
+              <a title="Pay Now" href="#pay">
+                Total{" "}
+                {value * post.price_adults +
+                  value2 * post.price_kids +
+                  Number(checkedItems)}{" "}
+                OMR or Pay{" "}
+                {(Number(
+                  value * post.price_adults +
+                    value2 * post.price_kids +
+                    Number(checkedItems)
+                ) /
+                  100) *
+                  20}{" "}
+                OMR as Advanced Booking
+              </a>
             </div>
           ) : (
             <div className="TotalHolder">
-              Total{" "}
-              {value * post.price_adults +
-                value2 * post.price_kids +
-                Number(checkedItems)}{" "}
-              OMR
+              <Link title="Login to Pay" to="/en/user/">
+                Login to Pay Total{" "}
+                {value * post.price_adults +
+                  value2 * post.price_kids +
+                  Number(checkedItems)}{" "}
+                OMR
+              </Link>
             </div>
           )}
+          {/* PAY FORM */}
+          <div className="modal" id="pay">
+            <a className="modal-overlay" href="#close" aria-label="Close"></a>
+            <div className="modal-container" role="document">
+              <div className="modal-header">
+                <a
+                  className="btn btn-clear float-right"
+                  href="#close"
+                  aria-label="Close"
+                ></a>
+                <div className="modal-title">Pay Now</div>
+              </div>
+              <div className="modal-body">
+                <div className="content">
+                  <Pay />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <a className="btn btn-link" href="#close">
+                  &times;
+                </a>
+              </div>
+            </div>
+          </div>
+          {/*  */}
 
           {/* Travel add-ons and extras */}
           {value3 === "Private" ? (
@@ -489,7 +527,6 @@ function PackageSingle() {
             <div></div>
           )}
         </div>
-
         {/* Details */}
         {post.availability ? (
           <div
@@ -526,7 +563,6 @@ function PackageSingle() {
         ) : (
           <div></div>
         )}
-
         {/* Details */}
         {post.menu_breakfast ? (
           <div
@@ -570,7 +606,6 @@ function PackageSingle() {
         ) : (
           <div></div>
         )}
-
         {/* Details */}
         {post.menu_dinner ? (
           <div
@@ -614,7 +649,6 @@ function PackageSingle() {
         ) : (
           <div></div>
         )}
-
         {/* Details */}
         {post.gallery ? (
           <div
