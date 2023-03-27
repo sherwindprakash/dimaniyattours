@@ -5,10 +5,10 @@ import Login from "../../components/User/Login";
 import Register from "../../components/User/Register";
 
 export default function SpecialOffers() {
-  const [Email, setEmail] = useState([]);
+  const [Email, setEmail] = useState();
 
   useEffect(() => {
-    document.title = `Dimaniyat Tours | ` + Email;
+    document.title = `Dimaniyat Tours | Profile`;
 
     var raw = "";
 
@@ -24,9 +24,17 @@ export default function SpecialOffers() {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => setEmail([result[0].email]))
+      .then((result) => setEmail(result[0].email))
       .catch((error) => console.log("error", error));
   });
+
+  // LOGOUT
+  function handleSubmit(e) {
+    e.preventDefault();
+    sessionStorage.removeItem("api_key");
+    window.location.reload();
+  }
+  //
 
   return (
     <>
@@ -44,11 +52,25 @@ export default function SpecialOffers() {
                 <div
                   style={{
                     marginBottom: "20px",
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
-                  Welcome, {Email}
+                  Welcome user, {Email}
+                  <form onSubmit={handleSubmit}>
+                    <button
+                      style={{
+                        marginLeft: "20px",
+                      }}
+                      className="btn"
+                      type="submit"
+                    >
+                      Logout
+                    </button>
+                  </form>
                 </div>
                 <h2>Invoice</h2>
+                <div>LIST HERE</div>
               </div>
             </div>
           </div>

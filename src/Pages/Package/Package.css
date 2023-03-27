@@ -104,6 +104,8 @@ input.InputDesign {
     position: sticky;
     z-index: 1;
     background: var(--bg-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 small.SmallNote {
@@ -192,6 +194,13 @@ img.timeImage {
 .availabilityDetils .HHH {
     text-align: center;
     width: min-content;
+}
+
+.TotalHolder a {
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 17px;
 }
 
 @media only screen and (max-width: 1180px) {
