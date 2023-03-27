@@ -62,6 +62,11 @@ function PackageSingle() {
     setChecked(updatedList);
   };
 
+
+   
+
+
+
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
@@ -69,9 +74,14 @@ function PackageSingle() {
       })
     : "";
 
+   
+
+
+
   // Return classes based on whether item is checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
+    
   //
 
   let params = useParams();
@@ -247,7 +257,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form name={"comments"} />
+                          <Form post={post.title} name={"comments"} />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -303,7 +313,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form name={"contacts"} />
+                          <Form post={post.title} name={"contacts"} />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -419,7 +429,7 @@ function PackageSingle() {
           {/* Totals */}
           {sessionStorage["api_key"] ? (
             <div className="TotalHolder">
-              <a title="Pay Now" href="#pay">
+              {/* <a title="Pay Now" href="#pay">
                 Total{" "}
                 {value * post.price_adults +
                   value2 * post.price_kids +
@@ -433,16 +443,36 @@ function PackageSingle() {
                   100) *
                   20}{" "}
                 USD as Advanced Booking
-              </a>
+              </a> */}
+
+{value | value2 > null  ? <a title="Pay Now" href="#pay">
+                Pay{" "}
+                {value * post.price_adults +
+                  value2 * post.price_kids +
+                  Number(checkedItems)}{".00 "}
+                USD{" "} Now
+              </a> : '* Please input your person count'}
+
+
+              
+
+
+
+              
+
+
             </div>
           ) : (
             <div className="TotalHolder">
-              <Link title="Login to Pay" to="/en/user/">
+              {/* <Link title="Login to Pay" to="/en/user/">
                 Login to Pay Total{" "}
                 {value * post.price_adults +
                   value2 * post.price_kids +
-                  Number(checkedItems)}{" "}
+                  Number(checkedItems)}{".00 "}
                 USD
+              </Link> */}
+              <Link title="Login to Pay" to="/en/user/">
+                Login to Pay 
               </Link>
             </div>
           )}
@@ -462,7 +492,9 @@ function PackageSingle() {
                 <div className="content">
                   <Pay  Total= {value * post.price_adults +
                   value2 * post.price_kids +
-                  Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2}  />
+                  Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2} Addons={checked} />
+
+                 
                 </div>
               </div>
               <div className="modal-footer">
@@ -493,7 +525,7 @@ function PackageSingle() {
               </div>
               <div className="availability">
                 {post.additional.map((item, index) => (
-                  <div key={index} className="GroupRadio Check">
+                  <div key={index} className="GroupRadio Check" >
                     <label
                       key={index + `_Radio`}
                       style={{

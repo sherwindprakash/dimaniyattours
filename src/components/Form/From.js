@@ -28,6 +28,7 @@ const Form = (props) => {
         Email: Email,
         Excerpt: Excerpt,
         Phone: Phone,
+        Post: props.post
       },
     });
 

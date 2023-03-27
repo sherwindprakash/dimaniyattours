@@ -45,7 +45,7 @@ export default function Contact() {
               form below to send us your message, question, or feedback, and we
               will get back to you as soon as possible.
             </h3>
-            <Form name={"contacts"} />
+            <Form post={"Contacts"} name={"contacts"} />
           </div>
         </div>
       </div>

@@ -13,6 +13,8 @@ const PayNow = (props) => {
 
       {props.Kid} <br></br>
       {props.KidQ} <br></br>
+
+      {props.Addons}
     </>
   );
 };

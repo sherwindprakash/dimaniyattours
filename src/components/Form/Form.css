@@ -17,7 +17,7 @@ a.btn.btn-link {
 
 .inputGroup textarea {
     width: 60%;
-    height: 200px;
+    height: 100px;
 }
 
 textarea#message {
@@ -89,7 +89,7 @@ button.btn {
 
     .inputGroup textarea {
         width: 100%;
-        height: 200px;
+        height: 100px;
     }
 
 }
