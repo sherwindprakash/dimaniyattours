@@ -52,9 +52,9 @@ img.Next {
   height: 100%;
   padding: 20px;
   background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
+  background: -moz-linear-gradient(180deg, rgb(0 0 0) 0%, rgb(0 0 0 / 50%) 25%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(180deg, rgb(0 0 0) 0%, rgb(0 0 0 / 50%) 25%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, rgb(0 0 0) 0%, rgb(0 0 0 / 50%) 25%, rgba(0, 0, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
 }
 
