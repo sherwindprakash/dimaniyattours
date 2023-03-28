@@ -517,7 +517,10 @@ function PackageSingle() {
                 USD
               </Link> */}
               <Link title="Login to Pay" to="/en/user/">
-                Login to Pay 
+                Login to Pay {value * post.price_adults +
+                  value2 * post.price_kids +
+                  Number(checkedItems)}{".00 "}
+                USD{" "} Now
               </Link>
             </div>
           )}
