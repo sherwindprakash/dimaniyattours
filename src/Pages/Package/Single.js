@@ -46,13 +46,6 @@ function PackageSingle() {
     setValue3(e.target.value);
   };
 
-  const [value4, setValue4] = useState(0);
-
-  const handleChange4 = (e) => {
-    setValue4(e.target.value);
-  };
-
-
   //
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -69,11 +62,6 @@ function PackageSingle() {
     setChecked(updatedList);
   };
 
-
-   
-
-
-
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
@@ -81,14 +69,9 @@ function PackageSingle() {
       })
     : "";
 
-   
-
-
-
   // Return classes based on whether item is checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
-    
   //
 
   let params = useParams();
@@ -122,13 +105,6 @@ function PackageSingle() {
     <>
       <div className="PakageSingleBlock">
         <div className="LeftHolder">
-
-          
-{post.SpecialOffers  ?  <div className="SpecialOffer">
-            Special Offer
-          </div> : ''}
-
-         
           <img
             className="PackageHolderImage"
             fetchpriority="low"
@@ -271,7 +247,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form post={post.title} name={"comments"} />
+                          <Form name={"comments"} />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -327,7 +303,7 @@ function PackageSingle() {
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form post={post.title} name={"contacts"} />
+                          <Form name={"contacts"} />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -435,47 +411,9 @@ function PackageSingle() {
                   id="Date"
                   name="type"
                   required
-                  onChange={handleChange4}
                 />
               </label>
             </div>
-
-             {/* PAY FORM */}
-          {value4   ? 
-           <div className="modal" id="pay">
-           <a className="modal-overlay" href="#close" aria-label="Close"></a>
-           <div className="modal-container" role="document">
-             <div className="modal-header" style={{
-              padding: "0"
-             }}>
-               <a
-                 className="btn btn-clear float-right"
-                 href="#close"
-                 aria-label="Close"
-               ></a>
-               
-             </div>
-             <div className="modal-body">
-               <div className="content">
-                 <Pay  Total= {value * post.price_adults +
-                 value2 * post.price_kids +
-                 Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2} Addons={checked} 
-                 Date={value4}
-                 />
-
-                
-               </div>
-             </div>
-             <div className="modal-footer">
-               <a className="btn btn-link" href="#close">
-                 &times;
-               </a>
-             </div>
-           </div>
-         </div>: <small class="SmallNote">* Please input your date</small>}
-          {/*  */}
-
-
           </div>
           {/*  */}
           {/* Totals */}
@@ -486,7 +424,7 @@ function PackageSingle() {
                 {value * post.price_adults +
                   value2 * post.price_kids +
                   Number(checkedItems)}{" "}
-                USD or Pay{" "}
+                OMR or Pay{" "}
                 {(Number(
                   value * post.price_adults +
                     value2 * post.price_kids +
@@ -494,37 +432,45 @@ function PackageSingle() {
                 ) /
                   100) *
                   20}{" "}
-                USD as Advanced Booking
+                OMR as Advanced Booking
               </a>
-
-{value | value2  > null  ? <a title="Pay Now" href="#pay">
-                Pay{" "}
-                {value * post.price_adults +
-                  value2 * post.price_kids +
-                  Number(checkedItems)}{".00 "}
-                USD{" "} Now
-              </a> : <small className="Error">* Please input your Quantity</small>}
-
-
             </div>
           ) : (
             <div className="TotalHolder">
-              {/* <Link title="Login to Pay" to="/en/user/">
+              <Link title="Login to Pay" to="/en/user/">
                 Login to Pay Total{" "}
                 {value * post.price_adults +
                   value2 * post.price_kids +
-                  Number(checkedItems)}{".00 "}
-                USD
-              </Link> */}
-              <Link title="Login to Pay" to="/en/user/">
-                Login to Pay {value * post.price_adults +
-                  value2 * post.price_kids +
-                  Number(checkedItems)}{".00 "}
-                USD{" "} Now
+                  Number(checkedItems)}{" "}
+                OMR
               </Link>
             </div>
           )}
-         
+          {/* PAY FORM */}
+          <div className="modal" id="pay">
+            <a className="modal-overlay" href="#close" aria-label="Close"></a>
+            <div className="modal-container" role="document">
+              <div className="modal-header">
+                <a
+                  className="btn btn-clear float-right"
+                  href="#close"
+                  aria-label="Close"
+                ></a>
+                <div className="modal-title">Pay Now</div>
+              </div>
+              <div className="modal-body">
+                <div className="content">
+                  <Pay />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <a className="btn btn-link" href="#close">
+                  &times;
+                </a>
+              </div>
+            </div>
+          </div>
+          {/*  */}
 
           {/* Travel add-ons and extras */}
           {value3 === "Private" ? (
@@ -545,7 +491,7 @@ function PackageSingle() {
               </div>
               <div className="availability">
                 {post.additional.map((item, index) => (
-                  <div key={index} className="GroupRadio Check" >
+                  <div key={index} className="GroupRadio Check">
                     <label
                       key={index + `_Radio`}
                       style={{
