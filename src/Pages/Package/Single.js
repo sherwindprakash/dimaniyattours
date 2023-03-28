@@ -481,7 +481,7 @@ function PackageSingle() {
           {/* Totals */}
           {sessionStorage["api_key"] ? (
             <div className="TotalHolder">
-              {/* <a title="Pay Now" href="#pay">
+              <a title="Pay Now" href="#pay">
                 Total{" "}
                 {value * post.price_adults +
                   value2 * post.price_kids +
@@ -495,7 +495,7 @@ function PackageSingle() {
                   100) *
                   20}{" "}
                 USD as Advanced Booking
-              </a> */}
+              </a>
 
 {value | value2  > null  ? <a title="Pay Now" href="#pay">
                 Pay{" "}
