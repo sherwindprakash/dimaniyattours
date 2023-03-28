@@ -60,7 +60,7 @@ export default function App() {
               playsInline
               width="100%"
               height="100%"
-              // poster="one-does-not-simply.jpg"
+              poster={IMG}
               src={Destination}
               type="video/mp4"
             ></video>
