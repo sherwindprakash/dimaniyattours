@@ -44,6 +44,7 @@
 
 .LeftHolder {
     width: 40%;
+    position: relative;
 }
 
 .BodyHolder {
@@ -104,6 +105,8 @@ input.InputDesign {
     position: sticky;
     z-index: 1;
     background: var(--bg-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 small.SmallNote {
@@ -199,6 +202,42 @@ img.timeImage {
     padding: 5px;
     border-radius: 5px;
     font-size: 17px;
+}
+
+small.Error {
+    font-size: 15px;
+    font-weight: 200;
+    animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
+}
+@keyframes BlinkAnimation {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+.SpecialOffer {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 900;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    background-color: #35a4c9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
 }
 
 @media only screen and (max-width: 1180px) {
