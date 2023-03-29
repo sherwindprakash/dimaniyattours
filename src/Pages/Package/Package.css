@@ -32,6 +32,7 @@
     padding-bottom: 40px;
     padding-left: 20px;
     width: 100%;
+    z-index: 1;
 }
 
 .PakageSingleBlock {
@@ -45,6 +46,7 @@
 .LeftHolder {
     width: 40%;
     position: relative;
+    overflow: hidden;
 }
 
 .BodyHolder {
@@ -135,8 +137,8 @@ small.SmallNote {
 }
 
 img.availabilityImage {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     padding: 10px;
 }
@@ -189,12 +191,12 @@ img.timeImage {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .availabilityDetils .HHH {
     text-align: center;
-    width: min-content;
+    width: 20%;
 }
 
 .TotalHolder a {
@@ -209,17 +211,19 @@ small.Error {
     font-weight: 200;
     animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
 }
-@keyframes BlinkAnimation {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
 
-	25%,
-	75% {
-		opacity: 0;
-	}
+@keyframes BlinkAnimation {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 .SpecialOffer {
@@ -238,6 +242,37 @@ small.Error {
     flex-wrap: wrap;
     color: white;
     animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
+}
+
+.timing ul {
+    margin-left: 30px;
+}
+
+img.PackageHolderImage {
+    -webkit-transition-duration: 25s;
+    transition-duration: 25s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 25% 100%;
+    transform-origin: 25% 100%;
+    width: 100%;
+    height: auto;
+
+}
+
+img.PackageHolderImage:hover {
+    -webkit-transform: scale(1.3) rotate(3deg);
+    transform: scale(1.3) rotate(3deg);
+    -webkit-transform-origin: 25% 25%;
+    transform-origin: 25% 25%;
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .availabilityDetils .HHH {
+        text-align: center;
+        width: min-content;
+    }
 }
 
 @media only screen and (max-width: 1180px) {
@@ -276,6 +311,13 @@ small.Error {
     .BodyHolder {
         margin-left: 0%;
         width: 100%;
+    }
+
+    .availabilityDetils {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -508,6 +550,7 @@ img.availabilityMenuImage {
     align-items: center;
     width: 49%;
     margin-right: 1%;
+    margin-bottom: 15px;
 }
 
 .RightHolder {
@@ -515,7 +558,7 @@ img.availabilityMenuImage {
 }
 
 .RightHolder p {
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .RightHolder div {

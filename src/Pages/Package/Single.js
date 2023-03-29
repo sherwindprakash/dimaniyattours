@@ -52,7 +52,6 @@ function PackageSingle() {
     setValue4(e.target.value);
   };
 
-
   //
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -69,11 +68,6 @@ function PackageSingle() {
     setChecked(updatedList);
   };
 
-
-   
-
-
-
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
@@ -81,14 +75,10 @@ function PackageSingle() {
       })
     : "";
 
-   
-
-
-
   // Return classes based on whether item is checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
-    
+
   //
 
   let params = useParams();
@@ -122,13 +112,12 @@ function PackageSingle() {
     <>
       <div className="PakageSingleBlock">
         <div className="LeftHolder">
+          {post.SpecialOffers ? (
+            <div className="SpecialOffer">Special Offer</div>
+          ) : (
+            ""
+          )}
 
-          
-{post.SpecialOffers  ?  <div className="SpecialOffer">
-            Special Offer
-          </div> : ''}
-
-         
           <img
             className="PackageHolderImage"
             fetchpriority="low"
@@ -152,6 +141,7 @@ function PackageSingle() {
           >
             {post.content}
           </div>
+
           {/* Timing */}
           <div>
             <div
@@ -307,7 +297,7 @@ function PackageSingle() {
                         src={EMAIL}
                       />
                     </picture>
-                    <figcaption>Inquary</figcaption>
+                    <figcaption>Inquire about {post.title}</figcaption>
                   </a>
                   {/* POP */}
                   <div className="modal" id="Inquary">
@@ -317,17 +307,28 @@ function PackageSingle() {
                       aria-label="Close"
                     ></a>
                     <div className="modal-container" role="document">
-                      <div className="modal-header">
+                      <div
+                        className="modal-header"
+                        style={{
+                          marginTop: "15px",
+                        }}
+                      >
                         <a
                           className="btn btn-clear float-right"
                           href="#close"
                           aria-label="Close"
                         ></a>
-                        <div className="modal-title">Inquary</div>
+                        <div className="modal-title">
+                          Inquire about {post.title}
+                        </div>
                       </div>
                       <div className="modal-body">
                         <div className="content">
-                          <Form post={post.title} name={"contacts"} />
+                          <Form
+                            from="package"
+                            post={post.title}
+                            name={"contacts"}
+                          />
                         </div>
                       </div>
                       <div className="modal-footer">
@@ -440,42 +441,55 @@ function PackageSingle() {
               </label>
             </div>
 
-             {/* PAY FORM */}
-          {value4   ? 
-           <div className="modal" id="pay">
-           <a className="modal-overlay" href="#close" aria-label="Close"></a>
-           <div className="modal-container" role="document">
-             <div className="modal-header" style={{
-              padding: "0"
-             }}>
-               <a
-                 className="btn btn-clear float-right"
-                 href="#close"
-                 aria-label="Close"
-               ></a>
-               
-             </div>
-             <div className="modal-body">
-               <div className="content">
-                 <Pay  Total= {value * post.price_adults +
-                 value2 * post.price_kids +
-                 Number(checkedItems)}  Adult={post.price_adults} AdultQ={value}  Kid={post.price_kids} KidQ={value2} Addons={checked} 
-                 Date={value4}
-                 />
-
-                
-               </div>
-             </div>
-             <div className="modal-footer">
-               <a className="btn btn-link" href="#close">
-                 &times;
-               </a>
-             </div>
-           </div>
-         </div>: <small class="SmallNote">* Please input your date</small>}
-          {/*  */}
-
-
+            {/* PAY FORM */}
+            {value4 ? (
+              <div className="modal" id="pay">
+                <a
+                  className="modal-overlay"
+                  href="#close"
+                  aria-label="Close"
+                ></a>
+                <div className="modal-container" role="document">
+                  <div
+                    className="modal-header"
+                    style={{
+                      padding: "0",
+                    }}
+                  >
+                    <a
+                      className="btn btn-clear float-right"
+                      href="#close"
+                      aria-label="Close"
+                    ></a>
+                  </div>
+                  <div className="modal-body">
+                    <div className="content">
+                      <Pay
+                        Total={
+                          value * post.price_adults +
+                          value2 * post.price_kids +
+                          Number(checkedItems)
+                        }
+                        Adult={post.price_adults}
+                        AdultQ={value}
+                        Kid={post.price_kids}
+                        KidQ={value2}
+                        Addons={checked}
+                        Date={value4}
+                      />
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <a className="btn btn-link" href="#close">
+                      &times;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <small class="SmallNote">* Please input your date</small>
+            )}
+            {/*  */}
           </div>
           {/*  */}
           {/* Totals */}
@@ -497,15 +511,18 @@ function PackageSingle() {
                 USD as Advanced Booking
               </a> */}
 
-{value | value2  > null  ? <a title="Pay Now" href="#pay">
-                Pay{" "}
-                {value * post.price_adults +
-                  value2 * post.price_kids +
-                  Number(checkedItems)}{".00 "}
-                USD{" "} Now
-              </a> : <small className="Error">* Please input your Quantity</small>}
-
-
+              {value | (value2 > null) ? (
+                <a title="Pay Now" href="#pay">
+                  Pay{" "}
+                  {value * post.price_adults +
+                    value2 * post.price_kids +
+                    Number(checkedItems)}
+                  {".00 "}
+                  USD Now
+                </a>
+              ) : (
+                <small className="Error">* Please input your Quantity</small>
+              )}
             </div>
           ) : (
             <div className="TotalHolder">
@@ -517,16 +534,16 @@ function PackageSingle() {
                 USD
               </Link> */}
 
-              
               <Link title="Login to Pay" to="/en/user/">
-                Login to Pay {value * post.price_adults +
+                Login to Pay{" "}
+                {value * post.price_adults +
                   value2 * post.price_kids +
-                  Number(checkedItems)}{".00 "}
-                USD{" "} Now
+                  Number(checkedItems)}
+                {".00 "}
+                USD Now
               </Link>
             </div>
           )}
-         
 
           {/* Travel add-ons and extras */}
           {value3 === "Private" ? (
@@ -547,7 +564,7 @@ function PackageSingle() {
               </div>
               <div className="availability">
                 {post.additional.map((item, index) => (
-                  <div key={index} className="GroupRadio Check" >
+                  <div key={index} className="GroupRadio Check">
                     <label
                       key={index + `_Radio`}
                       style={{
@@ -577,12 +594,23 @@ function PackageSingle() {
                     <span className={isChecked(item)}>{item.value.name}</span>
                   </div>
                 ))}
+
+                {post.additional.length <= 0 && (
+                  <div
+                    style={{
+                      width: "100%",
+                    }}
+                  >
+                    *No Package availble for this trip.
+                  </div>
+                )}
               </div>
             </div>
           ) : (
             <div></div>
           )}
         </div>
+
         {/* Details */}
         {post.availability ? (
           <div
@@ -590,7 +618,7 @@ function PackageSingle() {
               width: "100%",
             }}
           >
-            <div className="Details">Trip Provide</div>
+            <div className="Details">Trip Activities</div>
             <div className="availabilityDetils">
               {post.availability &&
                 post.availability.map((item, index) => {
@@ -614,6 +642,15 @@ function PackageSingle() {
                     </>
                   );
                 })}
+              {post.availability.length <= 0 && (
+                <div
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  *Not availble for this trip.
+                </div>
+              )}
             </div>
           </div>
         ) : (
@@ -657,7 +694,12 @@ function PackageSingle() {
                     </>
                   );
                 })}
+
+              {post.menu_breakfast.length <= 0 && (
+                <div>*Not availble for this trip.</div>
+              )}
             </div>
+            <small>{post.menu_breakfast_note}</small>
           </div>
         ) : (
           <div></div>
@@ -700,7 +742,12 @@ function PackageSingle() {
                     </>
                   );
                 })}
+
+              {post.menu_dinner.length <= 0 && (
+                <div>*Not availble for this trip.</div>
+              )}
             </div>
+            <small>{post.menu_dinner_note}</small>
           </div>
         ) : (
           <div></div>
@@ -732,6 +779,10 @@ function PackageSingle() {
                     );
                   })}
               </LightGallery>
+
+              {post.gallery.length <= 0 && (
+                <div>*Not availble for this trip.</div>
+              )}
             </div>
           </div>
         ) : (

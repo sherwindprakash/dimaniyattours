@@ -3,7 +3,6 @@ import "./Package.css";
 import PackageSingle from "../../components/Package/Package";
 
 class Package extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +12,7 @@ class Package extends React.Component {
   }
   componentDidMount() {
     fetch(
-      "http://localhost/admin/api/collections/get/package?token=22f8709abba293936facc262597237"
+      "http://localhost/admin/api/collections/get/package?token=22f8709abba293936facc262597237&filter[published]=true"
     )
       .then((res) => res.json())
       .then((json) => {

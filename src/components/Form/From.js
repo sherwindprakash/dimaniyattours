@@ -14,7 +14,12 @@ const Form = (props) => {
   const [Email, setEmail] = useState("");
   const [Excerpt, setExcerpt] = useState("");
   const [Phone, setPhone] = useState("");
-
+  // EXTRA
+  const [AdultQuantity, setAdultQuantity] = useState("");
+  const [KidQuantity, setKidQuantity] = useState("");
+  const [RequestDate, setRequestDate] = useState("");
+  const [Type, setType] = useState("");
+  //
   const handleSubmit = (event) => {
     // 👇️ prevent page refresh
     event.preventDefault();
@@ -28,7 +33,11 @@ const Form = (props) => {
         Email: Email,
         Excerpt: Excerpt,
         Phone: Phone,
-        Post: props.post
+        Post: props.post,
+        AdultQuantity: AdultQuantity,
+        KidQuantity: KidQuantity,
+        RequestDate: RequestDate,
+        Type: Type,
       },
     });
 
@@ -122,6 +131,101 @@ const Form = (props) => {
             required
           ></textarea>
         </div>
+
+        {/* Extra Detils */}
+        {props.from === "package" && (
+          <>
+            <h4>Extra Detils</h4>
+            <div className="inputGroup">
+              <label htmlFor="AdultQuantity">Adult Quantity:</label>
+              <input
+                className="form-input"
+                type="number"
+                id="Adult Quantity"
+                name="Adult Quantity"
+                value={AdultQuantity}
+                onChange={(event) => setAdultQuantity(event.target.value)}
+                required
+                placeholder="Adult Quantity"
+              />
+            </div>
+
+            <div className="inputGroup">
+              <label htmlFor="KidQuantity">Kids Quantity:</label>
+              <input
+                className="form-input"
+                type="number"
+                id="Kid Quantity"
+                name="Kid Quantity"
+                value={KidQuantity}
+                onChange={(event) => setKidQuantity(event.target.value)}
+                required
+                placeholder="Kid Quantity"
+              />
+            </div>
+
+            <div className="inputGroup">
+              <label htmlFor="RequestDate">Request Date:</label>
+              <input
+                className="form-input"
+                type="date"
+                id="RequestDate"
+                name="RequestDate"
+                value={RequestDate}
+                onChange={(event) => setRequestDate(event.target.value)}
+                required
+                placeholder="RequestDate"
+              />
+            </div>
+
+            <div
+              className="inputGroup"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <label htmlFor="RequestType">Type:</label>
+              <div
+                className="inputGroup"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: "25px",
+                }}
+              >
+                <label htmlFor="RequestType">Sharing:</label>
+                <input
+                  className="form-input"
+                  type="radio"
+                  id="Sharing"
+                  name="RequestType"
+                  value="Sharing"
+                  onChange={(event) => setType(event.target.value)}
+                  required
+                  placeholder="Sharing"
+                  checked
+                  style={{
+                    marginRight: "15px",
+                  }}
+                />
+                <label htmlFor="RequestDate">Private:</label>
+                <input
+                  className="form-input"
+                  type="radio"
+                  id="Private"
+                  name="RequestType"
+                  value="Private"
+                  onChange={(event) => setType(event.target.value)}
+                  required
+                  placeholder="Private"
+                />
+              </div>
+            </div>
+          </>
+        )}
 
         <button className="btn" type="submit">
           Submit

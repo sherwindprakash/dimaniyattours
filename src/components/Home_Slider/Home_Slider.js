@@ -9,8 +9,10 @@ import "swiper/css/scrollbar";
 // import required modules
 import { Scrollbar } from "swiper";
 // LOAD IMG
-import IMG from "./dummy_480x700_ffffff_cccccc.png";
 import Destination from "./Destination.mp4";
+import ShortsTrips from "./shortstrips.webp";
+import MarineService from "./marineservice.webp";
+import SpecialOffers from "./specialoffers.webp";
 
 import NEXT from "../../assets/right-arrow-next-svgrepo-com.svg";
 
@@ -60,7 +62,6 @@ export default function App() {
               playsInline
               width="100%"
               height="100%"
-              poster={IMG}
               src={Destination}
               type="video/mp4"
             ></video>
@@ -99,7 +100,7 @@ export default function App() {
               width="480"
               alt="Gallery"
               title="Shorts Trips"
-              src={IMG}
+              src={ShortsTrips}
             />
           </Link>
         </SwiperSlide>
@@ -135,7 +136,7 @@ export default function App() {
               width="480"
               alt="Special Offers"
               title="Special Offers"
-              src={IMG}
+              src={SpecialOffers}
             />
           </Link>
         </SwiperSlide>
@@ -163,7 +164,7 @@ export default function App() {
               width="480"
               alt="Marine Service"
               title="Marine Service"
-              src={IMG}
+              src={MarineService}
             />
           </Link>
         </SwiperSlide>
