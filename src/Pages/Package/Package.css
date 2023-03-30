@@ -167,7 +167,7 @@ img.timeImage {
     width: 40px;
     height: 40px;
     position: relative;
-    top: 12px;
+    top: 0px;
     padding: 5px;
     margin: 0;
 }
@@ -185,6 +185,7 @@ img.timeImage {
     display: flex;
     align-items: flex-end;
     margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 .availabilityDetils {
@@ -210,6 +211,12 @@ small.Error {
     font-size: 15px;
     font-weight: 200;
     animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
+}
+
+h3.ExtraInfo {
+    color: var(--font-color);
+    padding-top: 10px;
+    font-weight: 600;
 }
 
 @keyframes BlinkAnimation {

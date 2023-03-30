@@ -28,6 +28,10 @@ const SpecialOffers = lazy(() => import("./Pages/SpecialOffers/SpecialOffers"));
 const User = lazy(() => import("./Pages/User/User"));
 const ShortsTrips = lazy(() => import("./Pages/Shorts_Trips/Shorts_Trips"));
 const MarineService = lazy(() => import("./Pages/MarineService/MarineService"));
+const Receipt = lazy(() => import("./Pages/Receipt/Receipt"));
+const ReceiptCancel = lazy(() => import("./Pages/Receipt/Cancel"));
+
+
 
 function App() {
   return (
@@ -102,6 +106,10 @@ function App() {
               <Route path="/en/user/" element={<User />} />
               <Route path="/en/shorts-trips/" element={<ShortsTrips />} />
               <Route path="/en/marine-service/" element={<MarineService />} />
+              <Route path="/en/receipt" element={<Receipt />} />
+              <Route path="/en/receipt/cancel" element={<ReceiptCancel />} />
+
+              
             </Routes>
           </Suspense>
         </div>
