@@ -133,6 +133,7 @@ function PackageSingle() {
         </div>
         <div className="BodyHolder">
           <h2>{post.title}</h2>
+          <h3 className="ExtraInfo">{post.extra_info}</h3>
           <div
             style={{
               marginTop: "20px",
@@ -158,6 +159,9 @@ function PackageSingle() {
                   media="(prefers-color-scheme: dark)"
                 />
                 <img
+                style={{
+                  top: "12px"
+                }}
                   className="timeImage"
                   fetchpriority="low"
                   height="40"
@@ -221,7 +225,7 @@ function PackageSingle() {
                   <a
                     style={{
                       display: "flex",
-                      alignItems: "flex-end",
+                      alignItems: "center",
                     }}
                     title="Give Your comment"
                     href="#comment"
@@ -277,7 +281,7 @@ function PackageSingle() {
                   <a
                     style={{
                       display: "flex",
-                      alignItems: "flex-end",
+                      alignItems: "center",
                     }}
                     title="Inquary"
                     href="#Inquary"
