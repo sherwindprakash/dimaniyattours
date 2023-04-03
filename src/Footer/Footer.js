@@ -12,33 +12,54 @@ export default function Footer() {
       <footer>
         <div className="footerHolder">
           <div className="FUDiv">Follow us</div>
-          <img
-            loading="lazy"
-            width="40"
-            height="40"
+          <a
+            href="https://www.facebook.com/people/Alluluah-Tourism/pfbid0T1eT2aNEHvPXGgqXmRyHvKRgqBVh4va3MdRMEipuYN4LaxYk87oZmkMyS9a34Rh8l/?fref=ts"
             alt="Dimaniyat Tours | Facebook"
             title="Dimaniyat Tours | Facebook"
-            src={Facebook}
-            className="icon"
-          />
-          <img
-            loading="lazy"
-            width="40"
-            height="40"
+            target="_blank"
+          >
+            <img
+              loading="lazy"
+              width="40"
+              height="40"
+              alt="Dimaniyat Tours | Facebook"
+              title="Dimaniyat Tours | Facebook"
+              src={Facebook}
+              className="icon"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/luluataldaymaniyat/"
             alt="Dimaniyat Tours | Instagram"
             title="Dimaniyat Tours | Instagram"
-            src={Instagram}
-            className="icon"
-          />
-          <img
-            loading="lazy"
-            width="40"
-            height="40"
-            alt="Dimaniyat Tours | Tripadvisor"
-            title="Dimaniyat Tours | Tripadvisor"
-            src={Tripadvisor}
-            className="icon"
-          />
+            target="_blank"
+          >
+            <img
+              loading="lazy"
+              width="40"
+              height="40"
+              alt="Dimaniyat Tours | Instagram"
+              title="Dimaniyat Tours | Instagram"
+              src={Instagram}
+              className="icon"
+            />
+          </a>
+          <a
+            href=""
+            alt="Dimaniyat Tours | Trip Advisor"
+            title="Dimaniyat Tours | Trip Advisor"
+            target="_blank"
+          >
+            <img
+              loading="lazy"
+              width="40"
+              height="40"
+              alt="Dimaniyat Tours | Tripadvisor"
+              title="Dimaniyat Tours | Tripadvisor"
+              src={Tripadvisor}
+              className="icon"
+            />
+          </a>
 
           <a
             target="_blank"

@@ -92,4 +92,47 @@ button.btn {
         height: 100px;
     }
 
+    .PayHolder {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+.PayHolder {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.lightbox.show-lightbox,
+h2.SHOW.HIDE {
+    display: block;
+}
+
+.lightbox,
+h2.SHOW.show-lightbox {
+    display: none;
+}
+
+button.Paybtn {
+    width: 100%;
+    display: block;
+    background: var(--primary-color);
+    color: var(--bg-color-light);
+    height: 100%;
+    border-radius: 5px;
+    font-size: 19px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+form#SignUPFrom small {
+    line-height: 1.5;
+    display: block;
+    margin-top: 10px;
 }

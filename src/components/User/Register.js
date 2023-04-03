@@ -106,7 +106,7 @@ const HomeSignUp = () => {
         </div>
 
         <div className="inputGroup">
-          <label htmlFor="Nationality">Nationality:</label>
+          <label htmlFor="Nationality">Country Code:</label>
 
           <select
             id="Nationality"

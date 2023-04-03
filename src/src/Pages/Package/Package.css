@@ -1,0 +1,615 @@
+.Package {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.PackSingle {
+    width: 32%;
+    margin-bottom: 1%;
+}
+
+.PackageHolder {
+    position: relative;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.PackageHolder:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.Title {
+    background: linear-gradient(0deg, #0000007a 0%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    padding-top: 50%;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    width: 100%;
+    z-index: 1;
+}
+
+.PakageSingleBlock {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.LeftHolder {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.BodyHolder {
+    margin-left: 4%;
+    width: 56%;
+    max-width: 700px;
+}
+
+.GenValue {
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.GenValue .SingleH {
+    border-bottom: 1px solid var(--bg-color-light);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SingleH label {
+    display: inline;
+    font-size: 15px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.SingleH div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+input.InputDesign {
+    display: inline;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid var(--bg-color-light);
+    background-color: var(--bg-color-light);
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.TotalHolder {
+    text-align: right;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    background: var(--bg-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+small.SmallNote {
+    font-size: 12px;
+    text-align: right;
+    color: var(--primary-color);
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.availability {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.availability .HHH {
+    width: 23%;
+    font-weight: 400;
+    text-align: center;
+    font-size: 13px;
+    margin: 1%;
+}
+
+img.availabilityImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+img.travelImage {
+    width: 100%;
+    height: auto;
+}
+
+.Details {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid var(--bg-color-light);
+    padding-top: 20px;
+}
+
+.timing {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--bg-color-light);
+    padding-bottom: 0px;
+}
+
+img.timeImage {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 0px;
+    padding: 5px;
+    margin: 0;
+}
+
+.QuickLinks {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.QLinkInsideDivs {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.availabilityDetils {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.availabilityDetils .HHH {
+    text-align: center;
+    width: 20%;
+}
+
+.TotalHolder a {
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+small.Error {
+    font-size: 15px;
+    font-weight: 200;
+    animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
+}
+
+h3.ExtraInfo {
+    color: var(--font-color);
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+@keyframes BlinkAnimation {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.SpecialOffer {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 900;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    background-color: #35a4c9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    animation: BlinkAnimation 2s ease-in-out 0s infinite normal forwards;
+}
+
+.timing ul {
+    margin-left: 30px;
+}
+
+img.PackageHolderImage {
+    -webkit-transition-duration: 25s;
+    transition-duration: 25s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 25% 100%;
+    transform-origin: 25% 100%;
+    width: 100%;
+    height: auto;
+
+}
+
+img.PackageHolderImage:hover {
+    -webkit-transform: scale(1.3) rotate(3deg);
+    transform: scale(1.3) rotate(3deg);
+    -webkit-transform-origin: 25% 25%;
+    transform-origin: 25% 25%;
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .availabilityDetils .HHH {
+        text-align: center;
+        width: min-content;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .availability .HHH {
+        width: 31%;
+        margin: 2%;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .PackSingle {
+        width: 49%;
+        margin-bottom: 1%;
+    }
+
+    .QuickLinks {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .PackSingle {
+        width: 99%;
+        margin-bottom: 1%;
+    }
+
+    .LeftHolder {
+        width: 100%;
+    }
+
+    .BodyHolder {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    .availabilityDetils {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .SingleH div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .availability .HHH {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+
+
+    .HoldMenu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 49%;
+        margin-right: 1%;
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .availability div {
+        width: 98%;
+        margin: 1%;
+    }
+
+
+}
+
+
+/* MODEL */
+
+.modal {
+    align-items: center;
+    bottom: 0;
+    display: none;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0.4rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.modal.active,
+.modal:target {
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    z-index: 400;
+}
+
+.modal.active .modal-overlay,
+.modal:target .modal-overlay {
+    background: rgba(247, 248, 249, 0.75);
+    bottom: 0;
+    cursor: default;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal.active .modal-container,
+.modal:target .modal-container {
+    animation: slide-down 0.2s ease 1;
+    z-index: 1;
+}
+
+.modal.modal-sm .modal-container {
+    max-width: 320px;
+    padding: 0 0.4rem;
+}
+
+.modal.modal-lg .modal-overlay {
+    background: #fff;
+}
+
+.modal.modal-lg .modal-container {
+    box-shadow: none;
+    max-width: 960px;
+}
+
+.modal-container {
+    background: var(--bg-color);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 1rem rgb(48 55 66 / 9%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-height: 75vh;
+    max-width: 640px;
+    padding: 0 0.8rem;
+    width: 100%;
+}
+
+.modal-container.modal-fullheight {
+    max-height: 100vh;
+}
+
+.modal-container .modal-header {
+    padding: 0.8rem;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.modal-container .modal-body {
+    overflow-y: auto;
+    padding: 0.8rem;
+    position: relative;
+}
+
+.modal-container .modal-footer {
+    padding: 0.8rem;
+    text-align: right;
+}
+
+
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    transform: scale(2);
+    padding: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+
+/* SWITCH */
+.GroupRadio {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.GroupRadio h4 {
+    display: inline;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.ExtraCalucul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input#Sharing {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.GroupRadio label {
+    padding-left: 5px;
+}
+
+.GroupRadio.Check {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: right;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 31%;
+    margin-bottom: 20px;
+}
+
+span.not-checked-item {
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.Group {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+    .GroupRadio.Check {
+        width: 50%;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+    .GroupRadio.Check {
+        width: 100%;
+    }
+}
+
+img.availabilityMenuImage {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.availabilityMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.HoldMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 49%;
+    margin-right: 1%;
+    margin-bottom: 15px;
+}
+
+.RightHolder {
+    padding-left: 10px;
+}
+
+.RightHolder p {
+    margin: 0;
+}
+
+.RightHolder div {
+    font-weight: 500;
+}
+
+.title {
+    display: inline;
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+/* Gallery */
+.lg-react-element {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+img.PopIMG {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+}

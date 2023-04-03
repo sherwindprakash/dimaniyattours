@@ -10,6 +10,31 @@
     padding: 30px;
 }
 
+.InvoiceHolder {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.CubInvoice {
+    width: 50%;
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+li.Approvel {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #529b51;
+}
+
 @media only screen and (max-width: 900px) {
     .Dashboard {
         width: 100%;
@@ -21,6 +46,14 @@
         border-bottom: 1px solid var(--bg-color-light);
         padding-bottom: 30px;
         margin-top: 20px;
+    }
+
+    .CubInvoice {
+        width: 100%;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
     }
 
 }

@@ -1,0 +1,19 @@
+.Message {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    margin: 20px;
+    color: var(--font-color);
+    background: var(--bg-color-light);
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}

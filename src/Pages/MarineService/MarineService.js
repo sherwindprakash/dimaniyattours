@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import "./MarineService.css";
 import Form from "../../components/Form/From";
 
-import IMG from "../../assets/600x800.png";
+import IMG1 from "./images/MarineService1.webp";
+import IMG2 from "./images/MarineService2.webp";
+import IMG3 from "./images/MarineService3.webp";
 
 export default function Shorts_Trips() {
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Shorts_Trips() {
                 width="300"
                 alt="About us"
                 title="About us"
-                src={IMG}
+                src={IMG1}
                 className="myImg"
               />
               <img
@@ -45,7 +47,7 @@ export default function Shorts_Trips() {
                 width="300"
                 alt="About us"
                 title="About us"
-                src={IMG}
+                src={IMG2}
                 className="myImg"
               />
               <img
@@ -54,7 +56,7 @@ export default function Shorts_Trips() {
                 width="300"
                 alt="About us"
                 title="About us"
-                src={IMG}
+                src={IMG3}
                 className="myImg"
               />
             </div>

@@ -4,14 +4,19 @@ import "./DimaniyatIslands.css";
 
 import MAP from "../../assets/compass-2-svgrepo-com.svg";
 import MAPW from "../../assets/compass-2-svgrepo-com-White.svg";
+import VIDEO from "../../assets/Video/DimaniyatIslands.mp4";
 
 export default function Shorts_Trips() {
   return (
     <>
       <div className="DimaniyatIslands">
-        <h1 style={{
-          marginTop:"80px"
-        }}>Visit Dimaniyat Islands</h1>
+        <h1
+          style={{
+            marginTop: "80px",
+          }}
+        >
+          Visit Dimaniyat Islands
+        </h1>
 
         <div className="DI_Holder">
           <div className="LeftDIH">
@@ -39,7 +44,8 @@ export default function Shorts_Trips() {
                 }}
                 href="https://www.google.com/maps/place/Ad+Dimaniyat+Islands/@23.8555542,58.070546,14z/data=!3m1!4b1!4m6!3m5!1s0x3e8deb65745449c7:0x31cab4255039ac67!8m2!3d23.8555556!4d58.0880556!16s%2Fg%2F1216xc1h"
                 target="_blank"
-                title="Google Map" rel="noreferrer"
+                title="Google Map"
+                rel="noreferrer"
               >
                 <picture>
                   <source srcSet={MAPW} media="(prefers-color-scheme: dark)" />
@@ -60,15 +66,19 @@ export default function Shorts_Trips() {
           </div>
           <div className="RightDIH">
             {/* Video */}
-            <iframe
-              width="100%"
-              height="480"
-              src="https://www.youtube-nocookie.com/embed/1J_EmN0ZoeE"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <video
+              className="lazy"
+              title="Dimaniyat Islands | Dimaniyat Tours"
+              autoPlay
+              muted
+              loop
+              playsInline
+              width="480"
+              height="700"
+              src={VIDEO}
+              type="video/mp4"
+            ></video>
+
             {/*  */}
           </div>
         </div>

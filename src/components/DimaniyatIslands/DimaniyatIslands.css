@@ -5,15 +5,19 @@
     align-items: center;
     justify-content: space-between;
 }
-.LeftDIH, .RightDIH {
+
+.LeftDIH,
+.RightDIH {
     width: 46%;
 }
+
 a.btnDI {
     border: 1px solid;
     padding: 5px;
     display: inline-block;
     border-radius: 5px;
 }
+
 img.timeImageHome {
     width: 48px;
     height: 48px;
@@ -29,10 +33,17 @@ img.timeImageHome {
     margin-top: 40px;
 }
 
+.RightDIH {
+    text-align: center;
+}
+
 @media only screen and (max-width: 1080px) {
-    .LeftDIH, .RightDIH {
+
+    .LeftDIH,
+    .RightDIH {
         width: 100%;
     }
+
     .LeftDIH {
         padding-bottom: 40px;
     }
@@ -43,4 +54,3 @@ img.timeImageHome {
         margin-bottom: 20px;
     }
 }
-

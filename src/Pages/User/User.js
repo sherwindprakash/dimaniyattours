@@ -6,6 +6,7 @@ import Register from "../../components/User/Register";
 
 export default function SpecialOffers() {
   const [Email, setEmail] = useState();
+  const [Info, setInfo] = useState();
 
   useEffect(() => {
     document.title = `Dimaniyat Tours | Profile`;
@@ -24,7 +25,19 @@ export default function SpecialOffers() {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => setEmail(result[0].email))
+
+      .then(function (result) {
+        setEmail(result[0].email);
+        // LOAD INVOCE
+        fetch(
+          "http://localhost/admin/api/collections/get/invoice?token=22f8709abba293936facc262597237&filter[Email]=" +
+            result[0].email
+        )
+          .then((response) => response.json())
+          .then((data) => setInfo(data.entries));
+        //
+      })
+
       .catch((error) => console.log("error", error));
   });
 
@@ -70,7 +83,29 @@ export default function SpecialOffers() {
                   </form>
                 </div>
                 <h2>Invoice</h2>
-                <div>LIST HERE</div>
+              </div>
+              <div className="InvoiceHolder">
+                {Info &&
+                  Info.map((item, index) => {
+                    return (
+                      <>
+                        <div className="CubInvoice">
+                          <strong>{item.package}</strong>
+                          <ul>
+                            <li>Invoive ID: {item.id}</li>
+                            <li>
+                              Adult: {item.Adult} * {item.Adult_Quantity}
+                            </li>
+                            <li>
+                              Kids: {item.Kid} * {item.Kid_Quantity}
+                            </li>
+                            <li>Total: {item.Total}</li>
+                            <li className="Approvel">{item.state}</li>
+                          </ul>
+                        </div>
+                      </>
+                    );
+                  })}
               </div>
             </div>
           </div>

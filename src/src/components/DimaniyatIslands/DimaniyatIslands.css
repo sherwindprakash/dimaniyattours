@@ -1,0 +1,46 @@
+.DI_Holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.LeftDIH, .RightDIH {
+    width: 46%;
+}
+a.btnDI {
+    border: 1px solid;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+img.timeImageHome {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+.ExtHolderData {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .LeftDIH, .RightDIH {
+        width: 100%;
+    }
+    .LeftDIH {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    a.btnDI {
+        margin-bottom: 20px;
+    }
+}
+

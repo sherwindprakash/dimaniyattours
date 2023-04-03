@@ -28,6 +28,53 @@ import lgZoom from "lightgallery/plugins/zoom";
 //
 
 function PackageSingle() {
+  // GET USER
+  const [Full_Name, setFull_Name] = useState();
+  const [Email, setEmail] = useState();
+  const [Nationality, setNationality] = useState();
+  const [DayPhone, setDayPhone] = useState();
+
+  var raw = "";
+
+  var requestOptions = {
+    method: "POST",
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(
+    "http://localhost/admin/api/cockpit/listUsers?token=22f8709abba293936facc262597237&filter[api_key]=" +
+      sessionStorage["api_key"],
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => setEmail(result[0].email));
+
+  fetch(
+    "http://localhost/admin/api/cockpit/listUsers?token=22f8709abba293936facc262597237&filter[api_key]=" +
+      sessionStorage["api_key"],
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => setFull_Name(result[0].Full_Name));
+
+  fetch(
+    "http://localhost/admin/api/cockpit/listUsers?token=22f8709abba293936facc262597237&filter[api_key]=" +
+      sessionStorage["api_key"],
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => setNationality(result[0].Nationality));
+
+  fetch(
+    "http://localhost/admin/api/cockpit/listUsers?token=22f8709abba293936facc262597237&filter[api_key]=" +
+      sessionStorage["api_key"],
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => setDayPhone(result[0].DayPhone));
+
+  //
   //
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
@@ -159,9 +206,9 @@ function PackageSingle() {
                   media="(prefers-color-scheme: dark)"
                 />
                 <img
-                style={{
-                  top: "12px"
-                }}
+                  style={{
+                    top: "12px",
+                  }}
                   className="timeImage"
                   fetchpriority="low"
                   height="40"
@@ -469,10 +516,14 @@ function PackageSingle() {
                   <div className="modal-body">
                     <div className="content">
                       <Pay
+                        Title={post.title}
+                        Full_Name={Full_Name}
+                        Email={Email}
                         Total={
                           value * post.price_adults +
                           value2 * post.price_kids +
-                          Number(checkedItems)
+                          Number(checkedItems) +
+                          `.00`
                         }
                         Adult={post.price_adults}
                         AdultQ={value}
@@ -480,6 +531,8 @@ function PackageSingle() {
                         KidQ={value2}
                         Addons={checked}
                         Date={value4}
+                        Nationality={Nationality}
+                        DayPhone={DayPhone}
                       />
                     </div>
                   </div>

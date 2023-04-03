@@ -30,8 +30,7 @@ const ShortsTrips = lazy(() => import("./Pages/Shorts_Trips/Shorts_Trips"));
 const MarineService = lazy(() => import("./Pages/MarineService/MarineService"));
 const Receipt = lazy(() => import("./Pages/Receipt/Receipt"));
 const ReceiptCancel = lazy(() => import("./Pages/Receipt/Cancel"));
-
-
+const NotFound = lazy(() => import("./Pages/NotFound/NotFound"));
 
 function App() {
   return (
@@ -46,50 +45,72 @@ function App() {
             <a href="tel:+968 9919 9908">+968 9919 9908</a>
           </div>
           <div className="SM">
-            <picture>
-              <source srcSet={FacebookD} media="(prefers-color-scheme: dark)" />
-              <img
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Dimaniyat Tours | Facebook"
-                title="Dimaniyat Tours | Facebook"
-                src={Facebook}
-                className="icon"
-              />
-            </picture>
-
-            <picture>
-              <source
-                srcSet={InstagramD}
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Dimaniyat Tours | Instagram"
-                title="Dimaniyat Tours | Instagram"
-                src={Instagram}
-                className="icon"
-              />
-            </picture>
-
-            <picture>
-              <source
-                srcSet={TripadvisorD}
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Dimaniyat Tours | Tripadvisor"
-                title="Dimaniyat Tours | Tripadvisor"
-                src={Tripadvisor}
-                className="icon"
-              />
-            </picture>
+            <a
+              href="https://www.facebook.com/people/Alluluah-Tourism/pfbid0T1eT2aNEHvPXGgqXmRyHvKRgqBVh4va3MdRMEipuYN4LaxYk87oZmkMyS9a34Rh8l/?fref=ts"
+              alt="Dimaniyat Tours | Facebook"
+              title="Dimaniyat Tours | Facebook"
+              target="_blank"
+            >
+              <picture>
+                <source
+                  srcSet={FacebookD}
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                  alt="Dimaniyat Tours | Facebook"
+                  title="Dimaniyat Tours | Facebook"
+                  src={Facebook}
+                  className="icon"
+                />
+              </picture>
+            </a>
+            <a
+              href="https://www.instagram.com/luluataldaymaniyat/"
+              alt="Dimaniyat Tours | Instagram"
+              title="Dimaniyat Tours | Instagram"
+              target="_blank"
+            >
+              <picture>
+                <source
+                  srcSet={InstagramD}
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                  alt="Dimaniyat Tours | Instagram"
+                  title="Dimaniyat Tours | Instagram"
+                  src={Instagram}
+                  className="icon"
+                />
+              </picture>
+            </a>
+            <a
+              href=""
+              alt="Dimaniyat Tours | Trip Advisor"
+              title="Dimaniyat Tours | Trip Advisor"
+              target="_blank"
+            >
+              <picture>
+                <source
+                  srcSet={TripadvisorD}
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="40"
+                  alt="Dimaniyat Tours | Tripadvisor"
+                  title="Dimaniyat Tours | Tripadvisor"
+                  src={Tripadvisor}
+                  className="icon"
+                />
+              </picture>
+            </a>
           </div>
         </div>
         <div className="Page">
@@ -108,8 +129,7 @@ function App() {
               <Route path="/en/marine-service/" element={<MarineService />} />
               <Route path="/en/receipt" element={<Receipt />} />
               <Route path="/en/receipt/cancel" element={<ReceiptCancel />} />
-
-              
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </div>

@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import "./Destination.css";
-import PlaceHolderImage from "../../assets/600x800.png";
+import VIDEO from "../../assets/Video/Destination.mp4";
+import VIDEO2 from "../../assets/Video/Destination_2.mp4";
+
+import PlaceHolderImage1 from "../../assets/images/Destination1.webp";
+import PlaceHolderImage2 from "../../assets/images/Destination2.webp";
+import PlaceHolderImage3 from "../../assets/images/Destination3.webp";
+import PlaceHolderImage4 from "../../assets/images/Destination4.webp";
 
 export default function Destination() {
   useEffect(() => {
@@ -34,15 +40,20 @@ export default function Destination() {
           within its borders are the waters surrounding the nine islands.
         </div>
         {/* Video */}
-        <iframe
+
+        <video
+          className="lazy"
+          title="Dimaniyat Islands | Dimaniyat Tours"
+          autoPlay
+          muted
+          loop
+          playsInline
           width="100%"
-          height="720"
-          src="https://www.youtube-nocookie.com/embed/1J_EmN0ZoeE"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+          height="auto"
+          src={VIDEO}
+          type="video/mp4"
+        ></video>
+
         {/*  */}
         <div className="ImagHolder">
           <img
@@ -52,7 +63,17 @@ export default function Destination() {
             width="600"
             alt="Dimaniyat Islands (A'seeb)"
             title="Dimaniyat Islands (A'seeb)"
-            src={PlaceHolderImage}
+            src={PlaceHolderImage1}
+          />
+
+          <img
+            className="PackageHolderImage"
+            fetchpriority="low"
+            height="800"
+            width="600"
+            alt="Dimaniyat Islands (A'seeb)"
+            title="Dimaniyat Islands (A'seeb)"
+            src={PlaceHolderImage2}
           />
           <img
             className="PackageHolderImage"
@@ -61,7 +82,7 @@ export default function Destination() {
             width="600"
             alt="Dimaniyat Islands (A'seeb)"
             title="Dimaniyat Islands (A'seeb)"
-            src={PlaceHolderImage}
+            src={PlaceHolderImage3}
           />
           <img
             className="PackageHolderImage"
@@ -70,16 +91,7 @@ export default function Destination() {
             width="600"
             alt="Dimaniyat Islands (A'seeb)"
             title="Dimaniyat Islands (A'seeb)"
-            src={PlaceHolderImage}
-          />
-          <img
-            className="PackageHolderImage"
-            fetchpriority="low"
-            height="800"
-            width="600"
-            alt="Dimaniyat Islands (A'seeb)"
-            title="Dimaniyat Islands (A'seeb)"
-            src={PlaceHolderImage}
+            src={PlaceHolderImage4}
           />
         </div>
       </div>

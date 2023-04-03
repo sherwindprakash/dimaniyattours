@@ -8,6 +8,7 @@ form#myform {
 
 a.btn.btn-link {
     font-size: 30px;
+    background: none !important;
 }
 
 .inputGroup input {

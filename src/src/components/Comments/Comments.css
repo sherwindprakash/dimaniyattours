@@ -1,0 +1,34 @@
+.CommentsHolder h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.commentHolder {
+    padding: 30px;
+    background-color: var(--bg-color);
+    margin-bottom: 20px;
+    -webkit-box-shadow: 1px 1px 20px 0px var(--bg-color-light);
+    -moz-box-shadow: 1px 1px 20px 0px var(--bg-color-light);
+    box-shadow: 1px 1px 20px 0px var(--bg-color-light);
+    width: 48%;
+    margin: 1%;
+}
+
+.commentHolder h4 {
+    margin-bottom: 10px;
+}
+
+.CommentsMaster {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+    .commentHolder {
+        width: 98%;
+        margin: 1%;
+    }
+}

@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Aboutus.css";
-import IMG from "../../assets/600x800.png";
+import IMG1 from "./images/Aboutus1.webp";
+import IMG2 from "./images/Aboutus2.webp";
+import IMG3 from "./images/Aboutus3.webp";
 
 export default function Gallery() {
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function Gallery() {
               width="300"
               alt="About us"
               title="About us"
-              src={IMG}
+              src={IMG1}
               className="myImg"
             />
             <img
@@ -42,7 +44,7 @@ export default function Gallery() {
               width="300"
               alt="About us"
               title="About us"
-              src={IMG}
+              src={IMG2}
               className="myImg"
             />
             <img
@@ -51,7 +53,7 @@ export default function Gallery() {
               width="300"
               alt="About us"
               title="About us"
-              src={IMG}
+              src={IMG3}
               className="myImg"
             />
           </div>

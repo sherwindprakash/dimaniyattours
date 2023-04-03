@@ -1,0 +1,66 @@
+footer {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+}
+
+.footerHolder {
+    background: #0066cb;
+    color: white;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: auto;
+}
+
+.footerHolder h3 {
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.footerHolder img {
+    padding: 5px;
+    margin: 0;
+}
+
+.footerHolder h4 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+img.iconWhatsApp {
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 48px;
+    z-index: 1;
+    background-color: var(--bg-color-light);
+    border-radius: 50%;
+    right: 48px;
+}
+
+.FUDiv {
+    font-weight: 100;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.FootText {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+@media only screen and (max-width: 500px) {
+    .footerHolder {
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+}

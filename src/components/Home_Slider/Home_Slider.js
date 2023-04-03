@@ -10,6 +10,8 @@ import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper";
 // LOAD IMG
 import Destination from "./Destination.mp4";
+import ShortsTripsV from "./ShortsTrips.mp4";
+
 import ShortsTrips from "./shortstrips.webp";
 import MarineService from "./marineservice.webp";
 import SpecialOffers from "./specialoffers.webp";
@@ -78,34 +80,6 @@ export default function App() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link title="Shorts Trips" to="/en/shorts-trips/">
-            <div
-              className="contHolder"
-              style={{
-                transform: "rotate(180deg)",
-              }}
-            >
-              <h3
-                style={{
-                  transform: "rotate(180deg)",
-                  marginTop: "20px",
-                }}
-              >
-                Shorts Trips
-              </h3>
-            </div>
-            <img
-              fetchpriority="low"
-              height="700"
-              width="480"
-              alt="Gallery"
-              title="Shorts Trips"
-              src={ShortsTrips}
-            />
-          </Link>
-        </SwiperSlide>
-
-        <SwiperSlide>
           <Link title="Special Offers" to="/en/special-offers/">
             <div
               className="contHolder"
@@ -138,6 +112,45 @@ export default function App() {
               title="Special Offers"
               src={SpecialOffers}
             />
+          </Link>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Link title="Shorts Trips" to="/en/shorts-trips/">
+            <div
+              className="contHolder"
+              style={{
+                transform: "rotate(180deg)",
+              }}
+            >
+              <h3
+                style={{
+                  transform: "rotate(180deg)",
+                  marginTop: "20px",
+                }}
+              >
+                Shorts Trips
+              </h3>
+            </div>
+            {/* <img
+              fetchpriority="low"
+              height="700"
+              width="480"
+              alt="Gallery"
+              title="Shorts Trips"
+              src={ShortsTrips}
+            /> */}
+            <video
+              className="lazy"
+              autoPlay
+              muted
+              loop
+              playsInline
+              width="100%"
+              height="100%"
+              src={ShortsTripsV}
+              type="video/mp4"
+            ></video>
           </Link>
         </SwiperSlide>
 
